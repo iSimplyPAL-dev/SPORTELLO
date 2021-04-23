@@ -1,6 +1,0 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<parameters>
-  <setParameter name="IIS Web Application Name" value="PREiSimply-SangroAventino-BO.it" />
-  <setParameter name="SportelloContext-Web.config Connection String" value="data source=192.168.81.214;initial catalog=OPENgovSPORTELLO_TRIBUTI;persist security info=True;user id=opengov;password=opengov;" />
-  <setParameter name="AnagraficaContext-Web.config Connection String" value="data source=192.168.81.214;initial catalog=OPENgovANAGRAFICA_TRIBUTI;persist security info=True;user id=opengov;password=opengov;" />
-</parameters>
