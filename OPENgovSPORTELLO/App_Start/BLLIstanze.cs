@@ -2965,6 +2965,85 @@ namespace OPENgovSPORTELLO.BLL
                return sScript;
             }
         }
+
+        /// <param name="myAnag"></param>
+        /// <param name="IdContribLog"></param>
+        /// <returns></returns>
+        public string LoadJumbotronFO(DettaglioAnagrafica myAnag, int IdContribLog)
+        {
+            string sScript = string.Empty;
+            try
+            {
+                sScript += "<p>&ensp;";
+                if (myAnag != null)
+                {
+                    if (IdContribLog != myAnag.COD_CONTRIBUENTE)
+                        sScript += "<label class=\"label text-italic\">per conto di </label>";
+                    sScript += "<label class=\"lead_bold\">" + (myAnag.Nome + " " + myAnag.Cognome).Trim().Replace("'", "’") + " </label>";
+                    sScript += "<label class=\"label\">&ensp;" + (myAnag.PartitaIva == string.Empty || myAnag.PartitaIva == "00000000000" ? "Codice Fiscale" : "Partita Iva") + ": " + (myAnag.PartitaIva == string.Empty || myAnag.PartitaIva == "00000000000" ? myAnag.CodiceFiscale : myAnag.PartitaIva) + "</label>";
+                    sScript += "<label class\"label\">&ensp;" + (
+                            (
+                                (myAnag.Nome + " " + myAnag.Cognome).Trim()
+                                + "&ensp;"
+                                + (myAnag.PartitaIva == string.Empty || myAnag.PartitaIva == "00000000000" ? "Codice Fiscale" : "Partita Iva") + ": " + (myAnag.PartitaIva == string.Empty || myAnag.PartitaIva == "00000000000" ? myAnag.CodiceFiscale : myAnag.PartitaIva)
+                                + "&ensp;"
+                                + myAnag.ViaResidenza
+                                + (myAnag.CivicoResidenza != string.Empty ? ", " + myAnag.CivicoResidenza : " " + myAnag.CivicoResidenza)
+                                + ((myAnag.CapResidenza != string.Empty || myAnag.ComuneResidenza != string.Empty || myAnag.ProvinciaResidenza != string.Empty)
+                                    ? " - " + myAnag.CapResidenza + " " + myAnag.ComuneResidenza +
+                                        ((myAnag.ProvinciaResidenza != string.Empty)
+                                            ? " (" + myAnag.ProvinciaResidenza + ")"
+                                            : string.Empty)
+                                    : string.Empty)
+                            ).Length > 109
+                                ? (
+                                        (myAnag.Nome + " " + myAnag.Cognome).Trim()
+                                        + "&ensp;"
+                                        + (myAnag.PartitaIva == string.Empty || myAnag.PartitaIva == "00000000000" ? "Codice Fiscale" : "Partita Iva") + ": " + (myAnag.PartitaIva == string.Empty || myAnag.PartitaIva == "00000000000" ? myAnag.CodiceFiscale : myAnag.PartitaIva)
+                                        + "&ensp;"
+                                        + myAnag.ViaResidenza
+                                        + (myAnag.CivicoResidenza != string.Empty ? ", " + myAnag.CivicoResidenza : " " + myAnag.CivicoResidenza)
+                                        + ((myAnag.CapResidenza != string.Empty || myAnag.ComuneResidenza != string.Empty || myAnag.ProvinciaResidenza != string.Empty)
+                                            ? " - " + myAnag.CapResidenza + " " + myAnag.ComuneResidenza +
+                                                ((myAnag.ProvinciaResidenza != string.Empty)
+                                                    ? " (" + myAnag.ProvinciaResidenza + ")"
+                                                    : string.Empty)
+                                            : string.Empty)
+                                    ).Substring(
+                                        ((myAnag.Nome + " " + myAnag.Cognome).Trim()
+                                            + "&ensp;"
+                                            + (myAnag.PartitaIva == string.Empty || myAnag.PartitaIva == "00000000000" ? "Codice Fiscale" : "Partita Iva") + ": " + (myAnag.PartitaIva == string.Empty || myAnag.PartitaIva == "00000000000" ? myAnag.CodiceFiscale : myAnag.PartitaIva)
+                                            + "&ensp;"
+                                        ).Length
+                                        , 109 - ((myAnag.Nome + " " + myAnag.Cognome).Trim()
+                                            + "&ensp;"
+                                            + (myAnag.PartitaIva == string.Empty || myAnag.PartitaIva == "00000000000" ? "Codice Fiscale" : "Partita Iva") + ": " + (myAnag.PartitaIva == string.Empty || myAnag.PartitaIva == "00000000000" ? myAnag.CodiceFiscale : myAnag.PartitaIva)
+                                            + "&ensp;"
+                                        ).Length
+                                    )
+                                : myAnag.ViaResidenza
+                                    + (myAnag.CivicoResidenza != string.Empty ? ", " + myAnag.CivicoResidenza : " " + myAnag.CivicoResidenza)
+                                    + ((myAnag.CapResidenza != string.Empty || myAnag.ComuneResidenza != string.Empty || myAnag.ProvinciaResidenza != string.Empty)
+                                        ? " - " + myAnag.CapResidenza + " " + myAnag.ComuneResidenza +
+                                            ((myAnag.ProvinciaResidenza != string.Empty)
+                                                ? " (" + myAnag.ProvinciaResidenza + ")"
+                                                : string.Empty)
+                                        : string.Empty)
+                        ).Replace("'", "’") + "</label>";
+                }
+                sScript += "</p>";
+                return "$('.jumbotronAnagFO').html('" + sScript.Replace("'", "&rsquo;") + "');";
+            }
+            catch (Exception ex)
+            {
+                Log.Debug("OPENgovSPORTELLO.BLL.Profilo.LoadJumbotronFO::errore::", ex);
+                return sScript;
+            }
+        }
+        /// <summary>
+        /// 
+        /// </summary>
+
         /// <summary>
         /// 
         /// </summary>

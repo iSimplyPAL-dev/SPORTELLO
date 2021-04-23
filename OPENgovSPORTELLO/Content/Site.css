@@ -638,15 +638,16 @@ div>ul>li{
 }
 /**** Anagrafica ****/
 .jumbotronAnag {
-    position:fixed;
-    top:108px;
-    height:50px;
+    position: fixed;
+    top: 113px;
+    height: 50px;
     line-height: 50px;
-    z-index:100;
+    z-index: 100;
     font-size: 14px;
     font-weight: 100;
     color: inherit;
-	width: 992px;											
+    width: 992px;
+    left: 282px;
 }
 .jumbotronAnagBO {
     position:fixed;
@@ -659,6 +660,20 @@ div>ul>li{
     color: inherit;
 	width: 992px;											
 }
+
+.jumbotronAnagFO {
+    top: 50px;
+    height: 50px;
+    line-height: 50px;
+    z-index: 100;
+    font-size: 14px;
+    font-weight: 100;
+    color: inherit;
+    background-color: lightblue;
+    width: 985px;
+    left: 282px;
+}
+
 /*.jumbotronAnag {
     position:fixed;
     margin-top:50px;

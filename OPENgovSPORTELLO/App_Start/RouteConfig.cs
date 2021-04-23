@@ -652,7 +652,15 @@ namespace OPENgovSPORTELLO
             try
             {
                 NameValueCollection myKey = ConfigurationManager.GetSection("appSettings") as NameValueCollection;
-                return myKey[Param].ToString();
+                
+                if (myKey[Param] != null)
+                {
+                    return myKey[Param].ToString();
+                }
+                else
+                {
+                    return string.Empty;
+                }
             }
             catch (Exception ex)
             {

@@ -17,7 +17,8 @@ namespace OPENgovSPORTELLO
     /// Nella sezione superiore del video, saranno presenti i bottoni  per accedere alle varie sezioni di lavoro dei tributi.
     /// </summary>
     /// <remarks>In ottemperanza alle linee guida di sviluppo 1.0</remarks>
-    public partial class DefaultFO : GeneralPage
+    //public partial class DefaultFO : GeneralPage
+    public partial class DefaultFO : BasePage
     {
         private static readonly ILog Log = LogManager.GetLogger(typeof(DefaultFO));
 
@@ -110,6 +111,8 @@ namespace OPENgovSPORTELLO
                 sScript += ScriptToExec;
                 sScript += "</script>";
                 ClientScript.RegisterStartupScript(this.GetType(), uniqueId, sScript);
+                RegisterScript(new BLL.Profilo().LoadJumbotronFO(MySession.Current.myAnag, MySession.Current.UserLogged.IDContribLogged), this.GetType());
+                //RegisterScript(new BLL.Profilo().LoadJumbotron(MySession.Current.myAnag, MySession.Current.UserLogged.IDContribLogged), this.GetType());
             }
         }
         /// <summary>

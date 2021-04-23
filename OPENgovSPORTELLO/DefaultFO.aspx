@@ -9,6 +9,7 @@
 </asp:Content>
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
     <div class="body_page">
+        <div class="jumbotronAnagFO"></div>
         <div class="col-md-12 lead">
             <label class="col-md-4" style="margin-top:10px;">Sportello Contribuente per il comune di </label>
             <asp:DropDownList runat="server" ID="ddlEnte" CssClass="subtitle col-md-4" AppendDataBoundItems="true" AutoPostBack="true" OnSelectedIndexChanged="ControlSelectedChanged"></asp:DropDownList>
