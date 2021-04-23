@@ -37,12 +37,6 @@ namespace OPENgovSPORTELLO.SPID
                 if (mySAMLResponse != string.Empty)
                 {
                     Log.Debug("OPENgovSPORTELLO.POST.mySAMLResponse="+ mySAMLResponse);
-                    /*using (MemoryStream ms = new MemoryStream(System.Text.Encoding.UTF8.GetBytes(mySAMLResponse)))
-                    {
-                        XmlSerializer xmlSerializer = new XmlSerializer(typeof(AttributeStatement));
-                        AttributeStatement response = (AttributeStatement)xmlSerializer.Deserialize(ms);
-                        email = response.Attribute.FirstOrDefault(x => x.Name == "email").AttributeValue?.TrimEnd();
-                    }*/
                     MySession.Current.SPIDAuthn = new SPIDAuthn();
                     var reader = XmlReader.Create(new MemoryStream(Convert.FromBase64String(Request["SAMLResponse"])));
                     var serializer = new XmlSerializer(typeof(XmlElement));
