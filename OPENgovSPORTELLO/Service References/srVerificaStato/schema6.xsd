@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="IdpEsito" elementFormDefault="qualified" targetNamespace="IdpEsito" id="schema6" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import namespace="IdpHeader" />
+  <xs:import namespace="IdpInclude" />
+  <xs:import namespace="IdpInformativaPagamento" />
+  <xs:element name="IdpEsitoVerifica">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q1="IdpHeader" minOccurs="0" maxOccurs="1" ref="q1:IdpHeader" />
+        <xs:element minOccurs="0" maxOccurs="1" name="IdpBody">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element minOccurs="0" maxOccurs="unbounded" name="StatoPagamento" type="tns:StatoPagamentoType" />
+              <xs:element minOccurs="0" maxOccurs="unbounded" name="InformazioniPagamento" type="tns:InformazioniPagamentoType" />
+              <xs:element minOccurs="0" maxOccurs="1" name="Esito" type="tns:Esito" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+      <xs:attribute name="Versione" type="tns:Versione" use="required" />
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="StatoPagamentoType">
+    <xs:simpleContent>
+      <xs:extension xmlns:q2="IdpInclude" base="q2:VerificaStatoPagamento">
+        <xs:attribute name="IdPagamento" type="xs:string" />
+        <xs:attribute name="TipoPendenza" type="xs:string" />
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="InformazioniPagamentoType">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="IdPagamento" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="TipoPendenza" type="xs:string" />
+      <xs:element minOccurs="1" maxOccurs="1" name="Stato" type="tns:VerificaStatoPagamentoDettagliato" />
+      <xs:element minOccurs="0" maxOccurs="1" name="DescrizioneStato" type="xs:string" />
+      <xs:element xmlns:q3="IdpInformativaPagamento" minOccurs="0" maxOccurs="1" name="Pagamento" type="q3:Pagamento" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:simpleType name="VerificaStatoPagamentoDettagliato">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="POSIZIONE_NON_PRESENTE" />
+      <xs:enumeration value="POSIZIONE_NON_PAGATA" />
+      <xs:enumeration value="POSIZIONE_NON_PAGABILE" />
+      <xs:enumeration value="POSIZIONE_PAGATA" />
+      <xs:enumeration value="POSIZIONE_PAGATA_SBF" />
+      <xs:enumeration value="POSIZIONE_CON_PAG_IN_CORSO" />
+      <xs:enumeration value="POSIZIONE_CON_DOC_EMESSO" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="Esito">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="Codice" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Descrizione" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Elemento" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Note" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:simpleType name="Versione">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="01.03-00" />
+      <xs:enumeration value="01.03-01" />
+      <xs:enumeration value="01.03-02" />
+      <xs:enumeration value="01.03-03" />
+    </xs:restriction>
+  </xs:simpleType>
+</xs:schema>

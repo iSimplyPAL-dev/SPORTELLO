@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="IdpEsito" elementFormDefault="qualified" targetNamespace="IdpEsito" id="schema5" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import namespace="IdpHeader" />
+  <xs:element name="IdpEsitoOTF" type="tns:IdpEsitoOTF" />
+  <xs:complexType name="IdpEsitoOTF">
+    <xs:sequence>
+      <xs:element xmlns:q1="IdpHeader" minOccurs="0" maxOccurs="1" ref="q1:IdpHeader" />
+      <xs:element minOccurs="0" maxOccurs="1" name="IdpOTF" type="tns:IdpOTFType" />
+      <xs:element minOccurs="0" maxOccurs="1" name="IdpBody" type="tns:IdpBodyType" />
+    </xs:sequence>
+    <xs:attribute name="Versione" type="tns:Versione" use="required" />
+  </xs:complexType>
+  <xs:complexType name="IdpOTFType">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="IdSessioneGW" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="UrlGW" type="xs:anyURI" />
+    </xs:sequence>
+    <xs:attribute name="Versione" type="tns:Versione" use="required" />
+  </xs:complexType>
+  <xs:simpleType name="Versione">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="01.03-00" />
+      <xs:enumeration value="01.03-01" />
+      <xs:enumeration value="01.03-02" />
+      <xs:enumeration value="01.03-03" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="IdpBodyType">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="InfoMessaggio" type="tns:InfoMessaggio" />
+      <xs:element minOccurs="0" maxOccurs="1" name="InfoDettaglio" type="tns:ArrayOfDettaglio" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="InfoMessaggio">
+    <xs:sequence>
+      <xs:element minOccurs="1" maxOccurs="1" name="Stato" type="tns:StatoMessaggio" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Esiti" type="tns:ArrayOfEsito" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Note" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:simpleType name="StatoMessaggio">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Elaborato Correttamente" />
+      <xs:enumeration value="Elaborato con Errori" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="ArrayOfEsito">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Esito" type="tns:Esito" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="Esito">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="Codice" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Descrizione" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Elemento" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Note" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ArrayOfDettaglio">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Dettaglio" type="tns:Dettaglio" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="Dettaglio">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="Id" type="xs:string" />
+      <xs:element minOccurs="1" maxOccurs="1" name="Stato" type="tns:StatoDettaglio" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Esiti" type="tns:ArrayOfEsito" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Note" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:simpleType name="StatoDettaglio">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Scartato" />
+    </xs:restriction>
+  </xs:simpleType>
+</xs:schema>

@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://www.cart.rete.toscana.it/servizi/iris_1_1/proxy" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://www.cart.rete.toscana.it/servizi/iris_1_1/proxy" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema targetNamespace="http://www.cart.rete.toscana.it/servizi/iris_1_1/proxy">
+      <s:import schemaLocation="http://localhost:63929/wsVerificaStato.asmx?schema=schema1" namespace="http://tempuri.org/" />
+      <s:include schemaLocation="http://localhost:63929/wsVerificaStato.asmx?schema=schema2" />
+      <s:import schemaLocation="http://localhost:63929/wsVerificaStato.asmx?schema=schema3" namespace="IdpInformativaPagamento" />
+      <s:import schemaLocation="http://localhost:63929/wsVerificaStato.asmx?schema=schema4" namespace="IdpHeader" />
+      <s:import schemaLocation="http://localhost:63929/wsVerificaStato.asmx?schema=schema5" namespace="IdpAllineamentoPendenze" />
+      <s:import schemaLocation="http://localhost:63929/wsVerificaStato.asmx?schema=schema6" namespace="IdpEsito" />
+      <s:import schemaLocation="http://localhost:63929/wsVerificaStato.asmx?schema=schema7" namespace="IdpInclude" />
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="IdpVerificaStatoPagamentiSoapIn">
+    <wsdl:part name="IdpVerificaStatoPagamenti1" element="tns:IdpVerificaStatoPagamenti" />
+  </wsdl:message>
+  <wsdl:message name="IdpVerificaStatoPagamentiSoapOut">
+    <wsdl:part name="IdpVerificaStatoPagamentiResult" element="tns:IdpVerificaStatoPagamenti.Esito" />
+  </wsdl:message>
+  <wsdl:portType name="VerificaStatoPagamentoBinding">
+    <wsdl:operation name="IdpVerificaStatoPagamenti">
+      <wsdl:input message="tns:IdpVerificaStatoPagamentiSoapIn" />
+      <wsdl:output message="tns:IdpVerificaStatoPagamentiSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="VerificaStatoPagamentoBinding" type="tns:VerificaStatoPagamentoBinding">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="IdpVerificaStatoPagamenti">
+      <soap:operation soapAction="IdpVerificaStatoPagamenti" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="VerificaStatoPagamentoBinding1" type="tns:VerificaStatoPagamentoBinding">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="IdpVerificaStatoPagamenti">
+      <soap12:operation soapAction="IdpVerificaStatoPagamenti" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+</wsdl:definitions>

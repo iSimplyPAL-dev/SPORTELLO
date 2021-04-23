@@ -1,0 +1,165 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" EnableViewState="true" CodeBehind="OPENgovSPORTELLO.master.cs" Inherits="OPENgovSPORTELLO.OPENgovSPORTELLO" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title><%: Page.Title %></title>
+<webopt:bundlereference runat="server" path="~/Content/css" />
+<link href="Images/logo_facile_tributi.png" rel="shortcut icon" type="image/x-icon" />
+<asp:ContentPlaceHolder ID="head" runat="server"></asp:ContentPlaceHolder>
+<script type="text/javascript">
+    function autoSubmit() {
+        var form = document.createElement("form");
+        form.setAttribute("method", "post");
+        form.setAttribute("action", $("#MainContent_UrlAuthGIS").val());
+        form.setAttribute("target", "myAuthGIS");
+
+        var hiddenField = document.createElement("input");
+        hiddenField.setAttribute("type", "hidden");
+        hiddenField.setAttribute("name", "pippo");
+        hiddenField.setAttribute("value", $('#MainContent_TokenAuthGIS').val());
+        form.appendChild(hiddenField);
+        document.body.appendChild(form);
+
+        form.submit();
+    }
+</script>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <asp:ScriptManager runat="server">
+            <Scripts>
+                <asp:ScriptReference Name="jquery" />
+                <asp:ScriptReference Path="~/Scripts/jquery-ui-1.10.4.custom.js" />
+                <asp:ScriptReference Path="~/Scripts/Custom.js?newversion" />
+                <asp:ScriptReference Path="~/Scripts/CustomLink.js?newversion" />
+                <asp:ScriptReference Path="~/Scripts/verimail.jquery.js?newversion" />
+                <asp:ScriptReference Path="~/Scripts/jquery.cookie.js" />
+            </Scripts>
+        </asp:ScriptManager>
+        <script type="text/javascript">
+            $(document).ready(function () {
+                $('#upProgress').hide();
+                $('.SubmitBtn').click(function () {
+                    if ((typeof Page_IsValid == 'undefined') || (Page_IsValid))
+                        $('#upProgress').show();
+                });
+            });
+        </script>
+        <div id="upProgress" class="modal" style="width:100%;height:100%">
+            <div class="modal-dialog" style="width:350px; margin: 0 auto;">
+                <div class="modal-content" style="padding:10px 10px 10px 10px">
+                    <asp:Label ID="lblProgressMessage" runat="server" Text="Elaborazione in corso..."></asp:Label>
+                    <p>
+                        <asp:Image ID="imgLoading" runat="server" ImageUrl="~/Images/loader.gif" ToolTip="Caricamento in corso..." />
+                    </p>
+                    <asp:Label runat="server" Text="Attendere Prego..."></asp:Label>
+                </div>
+            </div>
+        </div>        
+        <div id="divException" class="modal">
+            <div class="modal-dialog">
+                <div class="jumbotron text-normal text-justified">
+                    <p>Si è verificato un errore di connessione.</p>
+                    <p>Si prega di riprovare più tardi.</p>
+                    <label id="lblDescrErr"></label>
+                    <div class="btn btn-default pull-right">
+                        <p class="text-normal"><a href="/Account/LoginFO.aspx.aspx">Torna in Home Page</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <%--<div style="background-color:rgb(71,117,154);height:50px;"" class="navbar navbar-fixed-top">
+            le modifiche sono state apportate nella classe navbar-fixed-top--%>
+        <div  class="navbar navbar-fixed-top">
+            <div  class="navbar-header">
+
+                <%-- header --%>
+
+                <div class="divLogo" runat="server" id="Logo">
+                </div>
+
+                <div class="body_inner">  
+                    <a class="CenterTitle navbar-brandTitle"><label id="lblDescrEnte" class="Ente"></label></a>
+                    <asp:HiddenField ID="hdDescrEnte" runat="server" />
+                </div>
+                <div style="display: table-cell;">
+                    <asp:LoginView runat="server" ViewStateMode="Disabled">
+                        <AnonymousTemplate>
+                            <ul class="nav navbar-nav navbar-right">
+                                <li><a runat="server" class="NewLogin login-registration nascondiregistrati">Esegui registrazione</a></li>
+                                <!--<li><a runat="server" class="Login login-registration">Accedi</a></li>-->
+                            </ul>
+                        </AnonymousTemplate>
+                        <LoggedInTemplate>
+                            <ul class="nav navbar-nav navbar-right">
+                                <%--<li><a class="login-registration" style="color:red;" runat="server" href="~/Account/Manage" title="Manage your account">(Da rimuovere)Hello, <%: Context.User.Identity.GetUserName()  %> !</a></li>--%>
+                                <li><a id="FAQ" class="SubmitBtn Bottone BottoneHelp" title="Informazioni"></a></li>
+                                <li>
+                                    <%--<asp:LoginStatus runat="server" LogoutAction="Redirect" LogoutText="Disconnetti" LogoutPageUrl="~/" OnLoggingOut="Unnamed_LoggingOut" />--%>
+                                    <%--<asp:LoginStatus class="login-registration" runat="server" LogoutAction="Redirect" LogoutText="Disconnetti" LogoutPageUrl="/DefaultFO" OnLoggingOut="Unnamed_LoggingOut" />--%>
+                                    <asp:LoginStatus id="LoginStatus1" class="login-registration" runat="server" LogoutAction="Redirect" LogoutText="Disconnetti" OnLoggingOut="Unnamed_LoggingOut" />
+                                </li>
+                            </ul>
+                        </LoggedInTemplate>
+                    </asp:LoginView>
+                    <!--*** 201807 - traduzione pagina ***-->
+                    <div class="translate-wrapper navbar-right hidden" style="top: 60px;">
+                        <ul class="translation-links f32">
+                            <li><a href="#" class="flag it translate-float flag-margin" data-lang="Italiano"></a></li>       
+                            <li><a href="#" class="flag gb translate-float flag-margin" data-lang="Inglese"></a></li> 
+                            <li><a href="#" class="flag fr translate-float flag-margin" data-lang="Francese"></a></li>
+                            <li><a href="#" class="flag de translate-float flag-margin" data-lang="Tedesco"></a></li>
+                            <li><a href="#" class="flag es translate-float flag-margin" data-lang="Spagnolo"></a></li>
+                        </ul>
+                        <div id="google_translate_element"></div>
+                        <script type="text/javascript">
+                          function googleTranslateElementInit() {
+                            new google.translate.TranslateElement({pageLanguage: 'en', layout: google.translate.TranslateElement.InlineLayout.SIMPLE, autoDisplay: false}, 'google_translate_element');
+                          }
+                        </script>
+                        <script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit" type="text/javascript"></script>
+                    </div>
+                    <!--***  ***-->
+                </div> 
+                   
+            </div> 
+            <div style="display: table-row" class="navbar-inverse">
+                <div class="body_inner">
+                    <asp:ContentPlaceHolder ID="HeadTitleContent" runat="server"></asp:ContentPlaceHolder>
+                </div> 
+            </div>
+        </div>
+        <div style="display: table;" class="body_outer">
+            <div style="display: table-row;">
+                <div style="width: 160px; display: table-cell; position:fixed; top:125px; left:10px;">  
+                    <asp:ContentPlaceHolder ID="LeftMenuContent" runat="server"></asp:ContentPlaceHolder>
+                </div>
+                <div style="display: table-cell" class="body_inner">  
+                    <asp:ContentPlaceHolder ID="MainContent" runat="server">        
+                    </asp:ContentPlaceHolder>
+                    <asp:HiddenField ID="hfInitDich" runat="server" Value="0" />
+                </div>
+            </div>
+        </div>
+        <hr />
+        <footer class="col-md-12">
+            <p>&copy; 2016 - iSimply s.r.l.</p>
+        </footer>
+        <div id="cookie-notice" class="cn-bottom bootstrap" style="color: rgb(255, 255, 255); display: block; background-color: rgb(0, 0, 0);">
+	        <div class="cookie-notice-container">
+		        <span id="cn-notice-text">
+			        Utilizziamo i cookie per essere sicuri che tu possa avere la migliore esperienza sul nostro sito. Se continui ad utilizzare questo sito noi assumiamo che tu ne sia felice.
+		        </span>
+		        <a href="" id="cn-accept-cookie" data-cookie-set="accept" class="cn-set-cookie button bootstrap" onclick="SetCookiePolicy()">Ok</a>
+		        <a href="PrivacyCookiePolicy.aspx" target="_self" id="cn-more-info" class="button bootstrap">Maggiori informazioni</a>
+	        </div>
+        </div>
+        <iframe name="myAuthGIS" class="hidden"></iframe>	
+    </form>
+    
+</body>
+</html>

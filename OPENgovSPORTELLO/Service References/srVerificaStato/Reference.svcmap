@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="42f7e499-d051-4b6f-8270-f8bef7830413" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:63929/wsVerificaStato.asmx" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="wsVerificaStato.wsdl" MetadataType="Wsdl" ID="fc52962d-f6b9-4bf5-8919-4f35e6c52bcb" SourceId="1" SourceUrl="http://localhost:63929/wsVerificaStato.asmx?wsdl=wsdl1" />
+    <MetadataFile FileName="schema4.xsd" MetadataType="Schema" ID="950a2143-4275-47e5-a447-a9a30aba04fe" SourceId="1" SourceUrl="http://localhost:63929/wsVerificaStato.asmx?schema=schema4" />
+    <MetadataFile FileName="schema5.xsd" MetadataType="Schema" ID="8c31e9fa-c5a0-48ba-919d-7915d3007544" SourceId="1" SourceUrl="http://localhost:63929/wsVerificaStato.asmx?schema=schema5" />
+    <MetadataFile FileName="schema2.xsd" MetadataType="Schema" ID="b7a1ce76-a38a-4da7-80ea-4849dc633d4a" SourceId="1" SourceUrl="http://localhost:63929/wsVerificaStato.asmx?schema=schema2" />
+    <MetadataFile FileName="schema3.xsd" MetadataType="Schema" ID="e8310370-d78f-40dc-a38f-2cb7acb65a98" SourceId="1" SourceUrl="http://localhost:63929/wsVerificaStato.asmx?schema=schema3" />
+    <MetadataFile FileName="wsVerificaStato.disco" MetadataType="Disco" ID="d858a86c-d5f9-4c7d-9aad-357231c6a560" SourceId="1" SourceUrl="http://localhost:63929/wsVerificaStato.asmx?disco" />
+    <MetadataFile FileName="wsVerificaStato1.wsdl" MetadataType="Wsdl" ID="b8023258-988d-4959-89fe-88cd8708a5c3" SourceId="1" SourceUrl="http://localhost:63929/wsVerificaStato.asmx?wsdl" />
+    <MetadataFile FileName="schema6.xsd" MetadataType="Schema" ID="0310aedc-3b27-41ef-bd23-532337273164" SourceId="1" SourceUrl="http://localhost:63929/wsVerificaStato.asmx?schema=schema6" />
+    <MetadataFile FileName="schema7.xsd" MetadataType="Schema" ID="339be634-f326-4278-8756-a656953ca83b" SourceId="1" SourceUrl="http://localhost:63929/wsVerificaStato.asmx?schema=schema7" />
+    <MetadataFile FileName="schema1.xsd" MetadataType="Schema" ID="c983029e-d342-4bca-a1cb-f9b687aaed9a" SourceId="1" SourceUrl="http://localhost:63929/wsVerificaStato.asmx?schema=schema1" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

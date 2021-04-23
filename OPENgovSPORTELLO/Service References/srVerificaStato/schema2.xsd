@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://www.cart.rete.toscana.it/servizi/iris_1_1/proxy" elementFormDefault="qualified" targetNamespace="http://www.cart.rete.toscana.it/servizi/iris_1_1/proxy" id="schema2" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import namespace="IdpInformativaPagamento" />
+  <xs:import namespace="IdpEsito" />
+  <xs:element name="IdpVerificaStatoPagamenti">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q1="IdpInformativaPagamento" minOccurs="0" maxOccurs="1" ref="q1:IdpVerificaStatoPagamento" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="IdpVerificaStatoPagamenti.Esito">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q2="IdpEsito" minOccurs="0" maxOccurs="1" ref="q2:IdpEsitoVerifica" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

@@ -1,0 +1,90 @@
+﻿div#f24home{
+	/*width:800px;*/
+	min-height: 800px;
+	height:auto !important;
+	height: 800px;
+	/*float:left;*/
+}
+#f24home body {
+	font-family:"Courier New", Courier, monospace;
+	font-size: 13px;
+	background-color:#FFF;
+}
+#f24main{
+	width:800px;
+	height:1100px;
+	background-image:url(../Images/modf24_768x1024.jpg);
+	background-repeat: no-repeat;
+	background-position:left top;
+    margin-left:-10px;
+    margin-top:-10px;
+}
+#f24main input[type="text"]{
+	/*font-family:"Courier New", Courier, monospace;*/
+    border:none;
+    background:transparent;
+    outline:none;
+    height:14px;
+    pointer-events:none;
+    font-family:"Courier New", Courier, monospace;font-size:13px;
+    vertical-align:bottom;
+}
+#f24_testata{position:relative; width:800px; height:230px; float: left; /*border: 1px solid #090;*/}
+#f24_banca{ position:absolute; width:200px; margin-top:28px; left:459px;}
+#f24_bagenzia{ position:absolute; width:150px; margin-top:52px; left:459px;}
+#f24_bprov{ position:absolute; width:30px; margin-top:52px; left:720px;}
+#f24_cf{ position:absolute;	width:500px; margin-top:122px; left:158px;text-transform:uppercase; }
+#f24_uff{ position:absolute; width:40px; margin-top:122px; left:486px;}
+#f24_atto{ position:absolute; width:20px; margin-top:122px; left:564px;}
+#f24_cognome{ position:absolute; width:30px; margin-top:152px; left:158px;}
+#f24_nome{ position:absolute; width:200px; margin-top:152px; left:570px;}
+#f24_nascita{ position:absolute; width:30px; margin-top:182px; left:158px;}
+#f24_sesso{ position:absolute; width:30px; margin-top:182px; left:333px;}
+#f24_comune{ position:absolute; width:30px; margin-top:182px; left:373px;}
+#f24_prov{ position:absolute; width:30px; margin-top:182px; left:733px;}
+#f24_cf_coobl{position:absolute; width:30px; margin-top:215px; left:241px;}
+#f24_cod_id{ position:absolute; width:30px; margin-top:215px; left:733px;}
+#f24_giornov{ position:absolute; width:160px; margin-top:75px; left:16px;}
+#f24_abi{ position:absolute; width:125px; margin-top:70px; left:177px;}
+#f24_cab{ position:absolute; width:125px; margin-top:70px; left:302px;}
+#f24_iban{ position:absolute; width:258px; margin-top:20px; left:530px; height:22px;}
+#f24_assegno{position:absolute;width:170px;margin-top:44px;left:474px;}
+#f24_as_abi{position:absolute;width:110px;margin-top:62px;left:543px;}
+#f24_as_cab{position:absolute;width:110px;margin-top:62px;left:663px;}
+#f24_as_tipo1{position:absolute;width:20px;margin-top:27px;left:652px;}
+#f24_as_tipo2{position:absolute;width:20px;margin-top:47px;left:652px;}
+#f24_imu{position:relative;width:800px; height:293px; float: left;margin-top:-3px;}
+#f24_firma{position:relative;width:800px; height:110px; float: left;}
+#f24_print{position:relative;width:800px; float: left;}
+#f24_txt{position:relative;width:780px; float: left; margin-left:10px;}
+.group { zoom:1; /* For IE 6/7 */ }
+.nasp{letter-spacing: 0.91em; width:230px;}
+.cfsp{letter-spacing: 0.92em;width:500px;margin-left:2px;}
+.r_trib2s{width:770px; float: left; margin-left:0px;height:15px;padding-top:1px;}
+.se_id_op{ text-transform:uppercase; width:390px; margin-left:390px;text-align:right; letter-spacing: 0.92em;}
+.se_1{ text-transform:uppercase; width:52px; height:15px; letter-spacing: 0.9em;}
+.se_2{ text-transform:uppercase; width:56px; height:15px; text-align:center; letter-spacing: 0.2em;}
+.se_3{ text-transform:uppercase; width:70px;margin-left: 3px; height:15px; font-family:"Courier New", Courier, monospace; font-size:15px;letter-spacing: 0.45em;}
+.se_5{ text-transform:uppercase; width:50px; height:15px; text-align:center; letter-spacing: 0.2em;}
+.se_3_6{ width:73px; text-align:right; height:15px; letter-spacing: 0.33em;}	
+.d_sem_1{ width:53px; float: left; margin-left:50px;letter-spacing: 0.83em;}
+.d_sem_2{ width:58px; float: left;}
+.d_sem_3{ width:60px; float: left;letter-spacing: 0.83em;}
+.d_sem_4{ width:140px; float: left;margin-left:5px;}
+.d_sem_5{ width:52px; float: left;}
+.d_sem_6{ width:52px; float: left;}
+.d_sem_7{ width:75px; float: left;}
+.d_sem_8{ width:115px; float: left;text-align:right;}
+.d_sem_ch{ width:27px; float: left;}
+.mgs1{ margin:2px 0 0 3px; padding:0;}
+.cl2_1i1{ text-transform:uppercase; width:30px; height:15px; text-align:center;}
+.cl_4_4{ width:110px; text-align:right; height:15px; letter-spacing: 0.33em;}	
+.cl_5_4{ width:110px; text-align:right; height:15px; letter-spacing: 0.33em;}
+.r_trib1_f{width:799px; float: left; margin-left:0px; margin-top:1px;}
+.b1f5{ width:772px; float: left; text-align:right; height:20px; padding-top:1px;}
+.bl_5{ width:117px; text-align:right;letter-spacing: 0.33em;}
+.nib{ text-transform:uppercase; width:258px; height:15px; letter-spacing: 0.2em; text-align:left;}
+.nasp2{ text-transform:uppercase; width:118px; height:15px; letter-spacing: 0.4em; text-align:center;}
+.nib1{ text-transform:uppercase; width:170px; height:15px; letter-spacing: 0.1em; text-align:center;}
+.nib2{ text-transform:uppercase; width:110px; height:15px; letter-spacing: 0.2em; text-align:center;}
+

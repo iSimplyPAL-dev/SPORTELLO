@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<discovery xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://schemas.xmlsoap.org/disco/">
+  <contractRef ref="http://localhost:63929/wsOTF.asmx?wsdl" docRef="http://localhost:63929/wsOTF.asmx" xmlns="http://schemas.xmlsoap.org/disco/scl/" />
+  <soap address="http://localhost:63929/wsOTF.asmx" xmlns:q1="http://www.cart.rete.toscana.it/servizi/iris_1_1/proxy" binding="q1:ComunicazionePosizioniDebitorieOTFBinding" xmlns="http://schemas.xmlsoap.org/disco/soap/" />
+  <soap address="http://localhost:63929/wsOTF.asmx" xmlns:q2="http://tempuri.org/" binding="q2:wsOTFSoap" xmlns="http://schemas.xmlsoap.org/disco/soap/" />
+  <soap address="http://localhost:63929/wsOTF.asmx" xmlns:q3="http://www.cart.rete.toscana.it/servizi/iris_1_1/proxy" binding="q3:ComunicazionePosizioniDebitorieOTFBinding1" xmlns="http://schemas.xmlsoap.org/disco/soap/" />
+  <soap address="http://localhost:63929/wsOTF.asmx" xmlns:q4="http://tempuri.org/" binding="q4:wsOTFSoap12" xmlns="http://schemas.xmlsoap.org/disco/soap/" />
+</discovery>

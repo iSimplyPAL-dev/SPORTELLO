@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://www.cart.rete.toscana.it/servizi/iris_1_1/proxy" elementFormDefault="qualified" targetNamespace="http://www.cart.rete.toscana.it/servizi/iris_1_1/proxy" id="schema1" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import namespace="IdpAllineamentoPendenze" />
+  <xs:import namespace="IdpEsito" />
+  <xs:element name="IdpAllineamentoPendenzeEnteOTF">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q1="IdpAllineamentoPendenze" minOccurs="0" maxOccurs="1" ref="q1:IdpAllineamentoPendenzeOTF" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="IdpAllineamentoPendenzeEnteOTF.Esito">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q2="IdpEsito" minOccurs="0" maxOccurs="1" ref="q2:IdpEsitoOTF" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

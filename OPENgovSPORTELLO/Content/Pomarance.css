@@ -1,0 +1,66 @@
+﻿/**** Colori ****/
+input[type="image"]{
+    color:transparent;
+}
+.divLogo, .Bottone, .BottoneGrd, .BottoneMini, .imgGrd, .imgBaseModuli{  
+    background-color:transparent;
+}
+div>ul>li>p, .TextCmdGrd, .text-white, .login-registration, .login-registration:hover, .CartListHead, .CartListHead a, .Err_a{
+    color:#ffffff;
+}
+.label,.text-normal, .TextCmdBlack, .CartListItem, .CartListItemEdit, .CartListItemAlt, .CartListFooter, a.tooltip:hover span, legend{
+    color: #000000;
+}
+body, div[class*="col-"], .panel, .modalLoading {
+    background-color:#fcfcfc;
+}
+.CartListItem, .CartListItemEdit, .CartListItemAlt, .CartListItem input:not([type=image]), a.tooltip:hover span {
+    background-color:#fafafa;
+}
+.CenterTitle, .jumbotronAnag, .login, .dropdown-menu .divider, .nav .nav-divider {
+    background-color:#e5e5e5;
+}
+.lead_con_barra {
+  border-bottom-color:#e5e5e5;
+}
+legend, .modal-header{
+  border-bottom: #e5e5e5;
+}
+.modal-footer{
+    border-top: #e5e5e5;
+}
+.jumbotron{
+    background-color: #eeeeee;
+}
+.text-italic{
+    color:#606060;
+}
+.blink_me{
+    color:#FFD400;
+}
+.navbar-fixed-top, .navbar-inverse, .navbar-header, .divNews, .CartListHead, .panelGrd{
+    background-color:/*#47759a*/#891f16;
+}
+.subtitle, .blink_slow, .lead, .lead_normal, .lead_bold, .lead_Emphasized, .lead_con_barra, .lead_con_barra a, .modalLoadingContainer{
+    color:/*#47759a*/#891f16;
+}
+.panelGrd:before, .modalLoading {
+    border-color:/*#47759a*/#891f16 transparent;
+}
+.CartListHead, .CartListItem, .CartListItemEdit, .CartListItemAlt, .divNews hr{
+    border-left: /*#47759a*/#891f16;border-bottom: /*#47759a*/#891f16;
+}
+.Err_h1{
+    color:#d30000;
+}
+.CartListItemSel, a.tooltip:hover span{
+    color:#0ff;
+}
+a.tooltip span
+{
+    box-shadow: #CCC;
+}
+.modalLoadingNewsContainer{
+    background-color:#0094ff;
+}
+/**** ****/

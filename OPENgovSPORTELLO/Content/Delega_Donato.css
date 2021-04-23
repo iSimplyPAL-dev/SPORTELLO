@@ -1,0 +1,67 @@
+﻿/**** Dichiarazione Normativa ****/
+div#dichhome{
+	/*width:800px;*/
+	/**/min-height: 1200px;
+	height:auto !important;
+	height: 1200px;
+	float:left;
+	margin:10px auto;
+}
+#dichhome body {
+	font-family:"Courier New", Courier, monospace;
+	font-size: 28px;
+	background-color:#FFF;
+}
+#dichhome input[type="text"]{
+    pointer-events:none;
+	height:50px;
+    padding-top:0px;
+    border:none;
+    background:transparent;
+    outline:none;
+    font-family:"Courier New", Courier, monospace;
+}
+.dich_dett{
+	border:none;
+    background-color:transparent;
+    font-size:28px;
+	margin-top:25px;
+	margin-left:10px;
+}
+.dicrow{width:1500px; height:65px; line-height:65px;}
+#dich_testata{position:relative; width:1654px; height:2339px; float: left;
+		 background-image:url(../Images/Delega_Donato.png);
+		 background-repeat:no-repeat;
+}
+#dich_contribuente{position:relative; width:1498px; height:1280px; float: left;left:78px;top:500px;}
+#dichcf{position:relative;width:1140px;height:65px;float: left;left:340px;}
+#dichDcf{position:relative;width:100%;text-transform:uppercase;}
+#dichnominativo{position:relative;width:1230px;height:65px; float: left;left:250px;}
+#dichDnominativo{position:relative; width:100%;}
+#dichcomunenasc{position:relative; width:900px;height:65px; float:left;left:150px;margin-top:5px;}
+#dichDcomunenasc{position:relative; width:100%; }
+#dichpvnasc{position:relative; width:80px;height:65px; float:left;left:270px;margin-top:5px;}
+#dichDpv{position:relative; width:100%;text-transform:uppercase;}
+#dichdatanascGG{position:relative; width:60px;height:65px;float:left;left:320px;margin-top:5px;}
+#dichdatanascMM{position:relative; width:60px;height:65px;float:left;left:320px;margin-top:5px;}
+#dichdatanascAA{position:relative; width:60px;height:65px;float:left;left:320px;margin-top:5px;}
+#dichDdatanasc{position:relative; width:100%;}
+#dichcomune{position:relative; width:1090px;height:65px; float:left;left:200px;margin-top:5px;}
+#dichDcomune{position:relative; width:100%;}
+#dichpv{position:relative; width:80px;height:65px; float:left;left:320px;margin-top:5px;}
+#dichres{position:relative; width:1380px;height:65px; float:left;left:100px;}
+#dichDres{position:relative; width:100%;}
+
+#dichdelegici{position:relative;width:70px;height:65px; float:left; left:10px;margin-top:10px;}
+#dichcomunedelegici{position:relative;width:680px;height:65px; float:left; left:730px;}
+#dichdelegtarsu{position:relative;width:70px;height:65px; float:left; left:-60px;margin-top:10px;}
+#dichcomunedelegtarsu{position:relative;width:680px;height:65px; float:left; left:660px;}
+#dichDdeleg{position:relative; width:100%;text-align:center;}
+
+#dichnominativodelegato{position:relative;width:1230px;height:65px; float: left;left:250px;margin-top:10px;}
+#dichcfdelegato{position:relative;width:1140px;height:65px;float: left;left:340px;}
+#dichresdelegato{position:relative; width:1380px;height:65px; float:left;left:250px;}
+#dichcomunedelegato{position:relative; width:1150px;height:65px; float:left;left:130px;margin-top:5px;}
+#dichpvdelegato{position:relative; width:80px;height:65px; float:left;left:260px;margin-top:5px;}
+
+#dichdescrtributo{position:relative; width:80px;height:65px; float:left;left:400px;}

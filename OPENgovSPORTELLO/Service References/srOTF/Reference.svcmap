@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="d91db3a5-f572-4059-9554-28b8e27570ac" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:63929/wsOTF.asmx" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="schema2.xsd" MetadataType="Schema" ID="fec91ba7-213b-43ea-b87e-ff988068a388" SourceId="1" SourceUrl="http://localhost:63929/wsOTF.asmx?schema=schema2" />
+    <MetadataFile FileName="schema5.xsd" MetadataType="Schema" ID="ad873722-04e4-4bdb-be88-151fd4727714" SourceId="1" SourceUrl="http://localhost:63929/wsOTF.asmx?schema=schema5" />
+    <MetadataFile FileName="wsOTF.disco" MetadataType="Disco" ID="0737f053-1397-46be-beaa-1c9d74f81492" SourceId="1" SourceUrl="http://localhost:63929/wsOTF.asmx?disco" />
+    <MetadataFile FileName="schema1.xsd" MetadataType="Schema" ID="95c09e07-f25b-458c-bfce-6cbca2e54dca" SourceId="1" SourceUrl="http://localhost:63929/wsOTF.asmx?schema=schema1" />
+    <MetadataFile FileName="schema4.xsd" MetadataType="Schema" ID="bd0e0a6c-03dc-4fb5-8206-71b427361b05" SourceId="1" SourceUrl="http://localhost:63929/wsOTF.asmx?schema=schema4" />
+    <MetadataFile FileName="wsOTF.wsdl" MetadataType="Wsdl" ID="4520194e-4efa-4b06-a30b-c55090718215" SourceId="1" SourceUrl="http://localhost:63929/wsOTF.asmx?wsdl" />
+    <MetadataFile FileName="schema3.xsd" MetadataType="Schema" ID="ab7dc22e-a37b-45d0-acf5-181553123108" SourceId="1" SourceUrl="http://localhost:63929/wsOTF.asmx?schema=schema3" />
+    <MetadataFile FileName="schema6.xsd" MetadataType="Schema" ID="cbbd1751-2cff-4c4f-bdac-899d3021ae1e" SourceId="1" SourceUrl="http://localhost:63929/wsOTF.asmx?schema=schema6" />
+    <MetadataFile FileName="wsOTF1.wsdl" MetadataType="Wsdl" ID="39833c92-f2e0-44fe-b888-fd1b5c892c1e" SourceId="1" SourceUrl="http://localhost:63929/wsOTF.asmx?wsdl=wsdl1" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

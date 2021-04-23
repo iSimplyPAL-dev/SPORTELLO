@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://www.cart.rete.toscana.it/servizi/iris_1_1/proxy" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://www.cart.rete.toscana.it/servizi/iris_1_1/proxy" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema targetNamespace="http://www.cart.rete.toscana.it/servizi/iris_1_1/proxy">
+      <s:include schemaLocation="http://localhost:63929/wsOTF.asmx?schema=schema1" />
+      <s:import schemaLocation="http://localhost:63929/wsOTF.asmx?schema=schema2" namespace="IdpAllineamentoPendenze" />
+      <s:import schemaLocation="http://localhost:63929/wsOTF.asmx?schema=schema3" namespace="IdpHeader" />
+      <s:import schemaLocation="http://localhost:63929/wsOTF.asmx?schema=schema4" namespace="IdpInclude" />
+      <s:import schemaLocation="http://localhost:63929/wsOTF.asmx?schema=schema5" namespace="IdpEsito" />
+      <s:import schemaLocation="http://localhost:63929/wsOTF.asmx?schema=schema6" namespace="http://tempuri.org/" />
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="IdpAllineamentoPendenzeEnteOTFSoapIn">
+    <wsdl:part name="IdpAllineamentoPendenzeEnteOTF1" element="tns:IdpAllineamentoPendenzeEnteOTF" />
+  </wsdl:message>
+  <wsdl:message name="IdpAllineamentoPendenzeEnteOTFSoapOut">
+    <wsdl:part name="IdpAllineamentoPendenzeEnteOTFResult" element="tns:IdpAllineamentoPendenzeEnteOTF.Esito" />
+  </wsdl:message>
+  <wsdl:portType name="ComunicazionePosizioniDebitorieOTFBinding">
+    <wsdl:operation name="IdpAllineamentoPendenzeEnteOTF">
+      <wsdl:input message="tns:IdpAllineamentoPendenzeEnteOTFSoapIn" />
+      <wsdl:output message="tns:IdpAllineamentoPendenzeEnteOTFSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="ComunicazionePosizioniDebitorieOTFBinding" type="tns:ComunicazionePosizioniDebitorieOTFBinding">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="IdpAllineamentoPendenzeEnteOTF">
+      <soap:operation soapAction="IdpAllineamentoPendenzeEnteOTF" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="ComunicazionePosizioniDebitorieOTFBinding1" type="tns:ComunicazionePosizioniDebitorieOTFBinding">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="IdpAllineamentoPendenzeEnteOTF">
+      <soap12:operation soapAction="IdpAllineamentoPendenzeEnteOTF" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+</wsdl:definitions>

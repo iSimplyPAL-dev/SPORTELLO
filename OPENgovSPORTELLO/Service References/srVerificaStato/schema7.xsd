@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="IdpInclude" elementFormDefault="qualified" targetNamespace="IdpInclude" id="schema7" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:simpleType name="VerificaStatoPagamento">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Posizione non presente" />
+      <xs:enumeration value="Posizione non pagabile" />
+      <xs:enumeration value="Pagamento non eseguito" />
+      <xs:enumeration value="Pagamento eseguito" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="TipoPagamento">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Pagamento a Rate" />
+      <xs:enumeration value="Pagamento Unico" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="DettaglioCanalePagamento">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="Filiale" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Sportello" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="IdTerminale" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="IdOperazione" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="Allegato">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="Titolo" type="xs:string" />
+      <xs:element minOccurs="1" maxOccurs="1" name="Codifica" type="tns:MIMETypeCode" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Contenuto" type="xs:base64Binary" />
+      <xs:element minOccurs="0" maxOccurs="1" name="IdAntifalsificazione" type="xs:string" />
+    </xs:sequence>
+    <xs:attribute name="Tipo" type="tns:ContentType" use="required" />
+  </xs:complexType>
+  <xs:simpleType name="MIMETypeCode">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="GIF_" />
+      <xs:enumeration value="HTML" />
+      <xs:enumeration value="JPEG" />
+      <xs:enumeration value="LNK_" />
+      <xs:enumeration value="MSWD" />
+      <xs:enumeration value="MSEX" />
+      <xs:enumeration value="MSPP" />
+      <xs:enumeration value="PDF_" />
+      <xs:enumeration value="PNG_" />
+      <xs:enumeration value="TEXT" />
+      <xs:enumeration value="XML_" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="ContentType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Documento" />
+      <xs:enumeration value="Ricevuta" />
+      <xs:enumeration value="Quietanza" />
+    </xs:restriction>
+  </xs:simpleType>
+</xs:schema>

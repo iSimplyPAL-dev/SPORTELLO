@@ -1,0 +1,251 @@
+﻿/**** Dichiarazione Normativa ****/
+div#dichhome{
+	/*width:800px;*/
+	min-height: 1200px;
+	height:auto !important;
+	height: 1200px;
+	/*float:left;*/
+    margin:10px auto;
+}
+#dichhome body {
+	font-family:"Courier New", Courier, monospace;
+	font-size: 13px;
+	background-color:#FFF;
+}
+#dichmain{
+	width:790px;
+	height:750px;
+	background-repeat: no-repeat;
+	background-position:left top;
+}
+#dichhome input[type="text"]{
+    pointer-events:none;
+	height:25px;
+    padding-top:0px;
+    border:none;
+    background:transparent;
+    outline:none;
+    font-family:"Courier New", Courier, monospace;
+}
+#dich_contribuente, #dich_UI input[type="text"] {
+	font-size:13px;
+}
+.dich_header{
+	border:none;
+    background:transparent;
+    outline:none;
+    height:15px;
+    font-size:10px;
+}
+.dich_dett{
+	border:none;
+    background-color:transparent;
+    vertical-align:bottom;
+}
+.dicrow{width:799px; height:25px; margin-top:17px;}
+#dich_testata{position:relative; width:800px; height:1132px; float: left;
+		 background-image:url(../Images/DichIMUTestata.png);
+		 background-repeat:no-repeat;
+}
+#dichannotestata{position:relative;width:100px;height:50px;margin-left:295px; margin-top:80px;}
+#dichDannotestata{position:relative;width:100%;font-size:20px;font-weight:bold;letter-spacing: 0.3em;}
+#dichente{position:relative; width:600px;height:20px;float:left; left:135px;padding-top:10px;}
+#dichDente{position:relative;width:100%;font-size:20px;font-weight:bold;letter-spacing: 0.2em;}
+/**** dati contribuente ****/
+#dich_contribuente{position:relative; width:800px; height:310px; float: left;margin-top:-15px;}
+/*riga 1*/
+#dichcf{position:relative;width:330px;height:20px; float: left;left:95px;padding-top:25px;}/**/
+#dichDcf{position:relative;width:100%}
+#dichprefisso{position:relative;width:55px;height:20px; float: left;left:115px;padding-top:25px;}/**/
+#dichDprefisso{position:relative;width:100%}
+#dichntel{position:relative;width:120px;height:20px; float: left;left:100px;padding-top:25px;}/**/
+#dichDntel{position:relative;width:100%}
+#dichmail{position:relative;width:200px;height:20px; float: left;left:105px;padding-top:25px;}
+#dichDmail{position:relative;width:100%;font-size:10px;}
+/*riga 2*/
+#dichcognome{position:relative;width:710px;height:20px; float: left;left:80px;padding-top:12px;}/**/
+#dichDcognome{position:relative; width:100%;}
+/*riga 3*/
+#dichnome{position:relative;width:430px;height:20px; float: left;left:65px;padding-top:10px;}/**/
+#dichDnome{position:relative; width:100%;}
+#dichdatanascGG{position:relative; width:35px;height:20px;float:left;left:170px;padding-top:10px;}
+#dichdatanascMM{position:relative; width:35px;height:20px;float:left;left:165px;padding-top:10px;}
+#dichdatanascAA{position:relative; width:35px;height:20px;float:left;left:165px;padding-top:10px;}
+#dichDdatanasc{position:relative; width:100%;}
+#dichsessoM{position:relative; width:30px;height:20px; float: left;left:210px;padding-top:10px;}
+#dichsessoF{position:relative; width:30px;height:20px; float: left;left:205px;padding-top:10px;}
+#dichDsesso{position:relative; width:100%;}
+/*riga 4*/
+#dichcomunenasc{position:relative; width:330px;height:20px; float:left;left:165px;}/**/
+#dichDcomunenasc{position:relative; width:100%; }
+#dichpvnasc{position:relative; width:40px;height:20px; float:left;left:420px;}
+#dichDpvnasc{position:relative; width:100%;}
+/*riga 5*/
+#dichres{position:relative; width:425px;height:20px; float:left;left:30px;padding-top:10px;}/**/
+#dichDres{position:relative; width:100%;}
+#dichcap{position:relative; width:60px;height:20px; float:left;left:20px;padding-top:10px;}
+#dichDcap{position:relative; width:100%;}
+#dichcomune{position:relative; width:250px;height:20px; float:left;left:10px;padding-top:10px;}
+#dichDcomune{position:relative; width:100%;}
+#dichpv{position:relative; width:40px;height:20px; float:left;left:10px;padding-top:10px;}
+#dichDpv{position:relative; width:100%;}
+/**** ****/
+/**** dati immobile ****/
+#dich_UI{position:relative; width:800px; height:310px; float: left;
+         background-image:url(../Images/DichIMUDetUI.png);
+		 background-repeat:no-repeat;}
+#dichNOrdine{position:relative; width:35px;height:20px;float:left; left:5px;padding-top:15px;}
+#dichDNOrdine{position:relative; width:100%;}
+/*riga 1*/
+#dichcaratteristica{position:relative; width:45px;height:20px;float:left; left:10px;padding-top:10px;}
+#dichDcaratteristica{position:relative; width:100%;text-align:center;}
+#dichindirizzo{position:relative; width:670px;height:20px;float:left;left:45px;padding-top:10px;}
+#dichDindirizzo{position:relative; width:100%;}
+/*riga 2*/
+/*#dicdaticat:before{width:773px;font-size:9px;text-align:center;display:block;content:'';}*/
+#dicdaticat{position:relative;width:773px; height:20px;loat:left; left: 20px;}
+#dichsezione{position:relative; width:50px;height:20px;float:left; left:35px;padding-top:5px;}
+#dichDsezione{position:relative; width:50px;text-align:center; }
+#dichfoglio{position:relative; width:50px;height:20px;float:left;left: 45px;padding-top:5px;}
+#dichDfoglio{position:relative; width:100%;text-align:center; }
+#dichnumero{position:relative; width:50px;height:20px;float:left;left: 60px;padding-top:5px;}
+#dichDnumero{position:relative; width:100%;text-align:center; }
+#dichsub{position:relative; width:55px;height:20px;float:left;left: 70px;padding-top:5px;}
+#dichDsub{position:relative; width:100%;text-align:center; }
+#dichcat{position:relative; width:200px;height:20px;float:left;left:90px;padding-top:5px;}
+#dichDcat{position:relative; width:100%; }
+#dichcl{position:relative; width:50px;height:20px;float:left;left: 100px;padding-top:5px;}
+#dichDcl{position:relative; width:100%;text-align:center; }
+#dichprot{position:relative; width:130px;height:20px;float:left;left: 110px;padding-top:5px;}
+#dichDprot{position:relative; width:100%; }
+#dichanno{position:relative; width:60px;height:20px;float:left;left: 125px;padding-top:5px;}
+#dichDanno{position:relative; width:100%; }
+/*riga 3*/
+#dichstoricoinagibile{position:relative;width:35px;height:20px; float:left; left:75px;padding-top:10px;}
+#dichDstoricoinagibile{position:relative; width:100%;padding-left:5px;}
+#dichvalore{position:relative; width:200px;height:20px;float:left;left:100px;padding-top:15px;;}
+#dichDvalore{position:relative; width:100%;text-align:right; }
+#dichposs{position:relative; width:70px;height:20px;float:left;left:200px;padding-top:15px;}
+#dichDposs{position:relative; width:100%;text-align:right; }
+#dichridta{position:relative; width:30px;height:20px;float:left;left:290px;padding-top:10px;}
+#dichDridta{position:relative; width:100%; }
+#dichese{position:relative; width:30px;height:20px;float:left;left:400px;padding-top:10px;}
+#dichDese{position:relative; width:100%;}
+/*riga 4*/
+#dicdatidate{position:relative;width:773px; height:20px;loat:left; 
+	left: 60px;padding-top:18px;}
+#dichinizioGG{position:relative; width:50px;height:20px;float:left;left:25px;padding-top:5px;}
+#dichinizioMM{position:relative; width:50px;height:20px;float:left;left:40px;padding-top:5px;}
+#dichinizioAA{position:relative; width:50px;height:20px;float:left;left:55px;padding-top:5px;}
+#dichDdata{position:relative; width:100%;letter-spacing: 0.91em;}
+#dichdetraz{position:relative; width:140px;height:20px;float:left;left:90px;padding-top:5px;}
+#dichDdetraz{position:relative; width:100%;text-align:right; }
+#dichfinelavoriGG{position:relative; width:50px;height:20px;float:left;left: 185px;padding-top:5px;}
+#dichfinelavoriMM{position:relative; width:50px;height:20px;float:left;left: 200px;padding-top:5px;}
+#dichfinelavoriAA{position:relative; width:50px;height:20px;float:left;left: 215px;padding-top:5px;}
+/*riga 5*/
+#dichacquisto{position:relative; width:30px;height:20px;float:left;left:60px;padding-top:15px;}
+#dichDacquisto{position:relative; width:100%;}
+#dichcessione{position:relative; width:30px;height:20px;float:left;left:80px;padding-top:15px;}
+#dichDcessione{position:relative; width:100%; }
+#dichagentr{position:relative; width:270px;height:20px;float:left;left:160px;padding-top:15px;}
+#dichDagentr{position:relative; width:100%; }
+#dichestremi{position:relative; width:230px;height:20px;float:left;left:220px;padding-top:15px}
+#dichDestremi{position:relative; width:100%; }
+/**** ****/
+/**** dati annotazioni ****/
+#dich_Annotazioni{position:relative; width:800px; height:230px; float: left;
+         background-image:url(../Images/DichIMUAnnotazioni.png);
+		 background-repeat:no-repeat;}
+#dichannotazioni{position:relative; width:780px;height:80px;float:left; left:5px;padding-top:40px;
+    border:none;
+    background:transparent;
+    outline:none;
+    font-family:"Courier New", Courier, monospace;
+	line-height:25px;}
+/**** ****/
+
+/**** TARSU ****/
+#dichTARSU_UI{position:relative; width:800px; height:400px; float: left;
+         border-top:7px solid #FDD1AF;border-bottom:1px solid #FDD1AF;border-left:20px solid #FDD1AF;border-right:7px solid #FDD1AF; 
+         padding-top:10px;}
+#dichTARSUindirizzo{position:relative; width:800px;height:60px; float:left;margin-left:5px;}
+#dichTARSUHindirizzo{position:relative; width:770px;}
+#dichTARSUDindirizzo{position:relative; width:750px;}
+#dichTARSUfoglio{position:relative; width:60px;height:60px; float:left; margin-left:5px;}/**/
+#dichTARSUHfoglio{position:relative; width:60px; }
+#dichTARSUDfoglio{position:relative; width:50px;text-align:center;border-top:solid 1px #000; }
+#dichTARSUnumero{position:relative; width:60px;height:60px; float:left; }
+#dichTARSUHnumero{position:relative; width:60px;  }
+#dichTARSUDnumero{position:relative; width:50px;text-align:center;border-top:solid 1px #000; }
+#dichTARSUsub{position:relative; width:60px;height:60px; float:left;}
+#dichTARSUHsub{position:relative; width:60px; }
+#dichTARSUDsub{position:relative; width:50px;text-align:center;border-top:solid 1px #000; }
+#dichTARSUstatooccupaz{position:relative; width:340px;height:60px; float:left; }
+#dichTARSUHstatooccupaz{position:relative; width:320px; }
+#dichTARSUDstatooccupaz{position:relative; width:300px;border-top:solid 1px #000; }
+#dichTARSUprot{position:relative; width:150px;height:60px; float:left; }
+#dichTARSUHprot{position:relative; width:100px;}
+#dichTARSUDprot{position:relative; width:140px;border:1px solid #000; }
+#dichTARSUanno{position:relative; width:80px;height:60px; float:left; }
+#dichTARSUHanno{position:relative; width:80px; }
+#dichTARSUDanno{position:relative; width:80px;border-top:solid 1px #000; }
+#dichTARSUcat{position:relative;height:60px; width:450px; float:left; margin-left:5px; }/**/
+#dichTARSUHcat{position:relative; width:350px; }
+#dichTARSUDcat{position:relative; width:440px;border:1px solid #000; }
+#dichTARSUmq{position:relative; width:90px;height:60px; float:left; }
+#dichTARSUHmq{position:relative; width:80px;}
+#dichTARSUDmq{position:relative; width:80px;text-align:center;border-top:solid 1px #000; }
+#dichTARSUvano{position:relative; width:160px;height:60px; float:left; }
+#dichTARSUHvano{position:relative; width:80px;}
+#dichTARSUDvano{position:relative; width:150px;border-top:solid 1px #000; }
+#dichTARSUesente{position:relative; width:90px;height:60px; float:left;}
+#dichTARSUHesente{position:relative; width:90px;}
+#dichTARSUDesente{position:relative; width:30px;border:1px solid #000; }
+#dichTARSUinizio{position:relative; width:260px;height:60px; float:left; margin-left:5px; }/**/
+#dichTARSUHinizio{position:relative; width:250px; }
+#dichTARSUDinizio{position:relative; width:100px;border-top:solid 1px #000;margin-left:50px; }
+#dichTARSUfine{position:relative; width:260px;height:60px; float:left; }
+#dichTARSUHfine{position:relative; width:250px; }
+#dichTARSUDfine{position:relative; width:100px;border-top:solid 1px #000;margin-left:50px; }/**** ****/
+#dichTARSUrid{position:relative; width:800px;height:60px; float:left;margin-left:5px;}
+#dichTARSUHrid{position:relative; width:770px;}
+#dichTARSUDrid{position:relative; width:750px;}
+#dichTARSUese{position:relative; width:800px;height:60px; float:left;margin-left:5px;}
+#dichTARSUHese{position:relative; width:770px;}
+#dichTARSUDese{position:relative; width:750px;}
+/**** OSAP ****/
+/*#dichtipo{width:400px; float:left;}
+#dichHtipo{pointer-events:none;}
+#dichndich{width:400px; float:left;}
+#dichHndich{pointer-events:none;}
+#dichdata{width:800px;}
+#dichHdata{pointer-events:none;}
+#dichrichiedente{width:800px; }
+#dichHrichiedente{background-color:transparent; pointer-events:none;}
+#dichindirizzo{width:800px;}
+#dichHindirizzo{width:145px; pointer-events:none;}
+#dichDindirizzo{width:550px;}
+#dichcat{width:400px; float:left;}
+#dichHcat{width:145px; pointer-events:none;}
+#dichDcat{width:150px;}
+#dichoccupazione{width:400px; float:left;}
+#dichHoccupazione{pointer-events:none;}
+#dichdurata{width:400px; float:right;}
+#dichHdurata{pointer-events:none;}
+#dichtipodurata{width:400px; float:left;}
+#dichHtipodurata{pointer-events:none;}
+#dichcons{width:400px; float:right;}
+#dichHcons{pointer-events:none;}
+#dichmisuracons{ width:400px; float:left;}
+#dichHmisuracons{pointer-events:none;}
+#dichattrazione{width:400px; float:right;}
+#dichHattrazione{pointer-events:none;}
+#dichpercmagg{width:400px; float:left;}
+#dichHpercmagg{pointer-events:none;}
+#dichimpdetraz{width:400px; float:right;}
+#dichHimpdetraz{pointer-events:none;}
+#dichagevolaz{width:400px; float:left;}
+#dichHagevolaz{pointer-events:none;}*/
+/**** ****/
+/**** ****/

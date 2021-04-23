@@ -1,0 +1,159 @@
+﻿/**** Dichiarazione Normativa ****/
+div#dichhome{
+	/*width:800px;*/
+	/**/min-height: 1200px;
+	height:auto !important;
+	height: 1200px;
+	float:left;
+	margin:10px auto;
+	width:1654px;height:2339px;
+	background-image:url(../Images/DichTARITestata.png);
+	background-repeat:no-repeat;
+}
+#dichhome body {
+	font-family:"Courier New", Courier, monospace;
+	font-size: 28px;
+	background-color:#FFF;
+}
+input[type="text"]{
+    pointer-events:none;
+	height:50px;
+    padding-top:0px;
+    border:none;
+    background:transparent;
+    outline:none;
+    font-family:"Courier New", Courier, monospace;
+}
+.dich_dett{
+	border:none;
+    background-color:transparent;
+    font-size:28px;
+	margin-top:25px;
+	margin-left:10px;
+	width:100%;
+}
+.dicrow{width:1500px; height:65px; line-height:65px}
+#dich_testata{position:relative; width:1654px; height:2350px; float: left;}
+#dichannotestata{position:relative;width:100px;height:50px;left:610px; padding-top:195px;}
+#dichDannotestata{position:relative;width:100%;font-size:40px;font-weight:bold;letter-spacing: 0.3em;}
+#dichente{position:relative; width:1250px;height:50px;float:left; left:310px; top:60px;}
+#dichDente{position:relative;width:100%;font-size:40px;font-weight:bold;letter-spacing: 0.2em;}
+/**** dati contribuente ****/
+#dich_contribuente{position:relative; width:1498px; height:480px; float: left;left:78px;top:140px;padding-top:65px;}
+/*riga 1*/
+#dichcf{position:relative;width:640px;height:65px;float: left;left:135px;}
+#dichDcf{position:relative;width:100%;text-transform:uppercase;}
+#dichprefisso{position:relative;width:78px;height:65px; float: left;left:175px;}
+#dichDprefisso{position:relative;width:100%}
+#dichntel{position:relative;width:220px;height:65px; float: left;left:175px;}
+#dichDntel{position:relative;width:100%}
+#dichmail{position:relative;width:350px;height:65px; float: left;left:190px;}
+#dichDmail{position:relative;width:100%;font-size:14px;}
+/*riga 2*/
+#dichcognome{position:relative;width:1370px;height:65px; float: left;left:110px;}
+#dichDcognome{position:relative; width:100%;}
+/*riga 3*/
+#dichnome{position:relative;width:820px;height:65px; float: left;left:80px;margin-top:5px;}
+#dichDnome{position:relative; width:100%;}
+#dichdatanascGG{position:relative; width:60px;height:65px;float:left;left:295px;margin-top:5px;}
+#dichdatanascMM{position:relative; width:60px;height:65px;float:left;left:295px;margin-top:5px;}
+#dichdatanascAA{position:relative; width:60px;height:65px;float:left;left:295px;margin-top:5px;}
+#dichDdatanasc{position:relative; width:100%;}
+#dichsessoM{position:relative; width:40px;height:65px; float: left;left:388px;margin-top:-5px;}
+#dichsessoF{position:relative; width:40px;height:65px; float: left;left:398px;margin-top:-5px;}
+#dichDsesso{position:relative; width:100%;font-size:52px;}
+/*riga 4*/
+#dichcomunenasc{position:relative; width:630px;height:65px; float:left;left:270px;}
+#dichDcomunenasc{position:relative; width:100%; }
+#dichpvnasc{position:relative; width:80px;height:65px; float:left;left:765px;}
+#dichDpv{position:relative; width:100%;text-transform:uppercase;}
+/*riga 5*/
+#dichres{position:relative; width:800px;height:65px; float:left;left:15px;margin-top:-5px;}
+#dichDres{position:relative; width:100%;}
+#dichcap{position:relative; width:110px;height:65px; float:left;left:15px;margin-top:-5px;}
+#dichDcap{position:relative; width:100%;}
+#dichcomune{position:relative; width:480px;height:65px; float:left;left:5px;margin-top:-5px;}
+#dichDcomune{position:relative; width:100%;}
+#dichpv{position:relative; width:80px;height:65px; float:left;left:5px;margin-top:-5px;}
+/**** ****/
+/**** dati spedizione ****/
+#dich_invio{position:relative; width:1498px; height:480px; float: left;left:78px;top:95px;padding-top:15px;}
+/*riga 1*/
+#dichcognomeCO{position:relative;width:1370px;height:65px; float: left;left:180px;margin-top:110px;}
+#dichDcognome{position:relative; width:100%;}
+/*riga 2*/
+#dichnomeCO{position:relative;width:820px;height:65px; float: left;left:150px;margin-top:5px;}
+#dichDnome{position:relative; width:100%;}
+/*riga 3*/
+#dichresCO{position:relative; width:790px;height:65px; float:left;left:110px;margin-top:30px;}
+#dichDres{position:relative; width:100%;}
+#dichcapCO{position:relative; width:110px;height:65px; float:left;left:110px;margin-top:30px;}
+#dichDcap{position:relative; width:100%;}
+#dichcomuneCO{position:relative; width:480px;height:65px; float:left;left:110px;margin-top:30px;}
+#dichDcomune{position:relative; width:100%;}
+#dichpvCO{position:relative; width:80px;height:65px; float:left;left:110px;margin-top:30px;}
+/**** ****/
+/**** dati occupanti ****/
+#dich_occupanti{position:relative; width:1498px; height:900px; float: left;left:78px;top:35px;padding-top:70px;}
+.dicrowOCC{width:1500px; height:65px; line-height:50px;}
+.dich_dettOCC{
+	border:none;
+    background-color:transparent;
+    font-size:28px;
+	margin-left:10px;
+}
+/*riga 1*/
+#dichnominativoOCC{position:relative;width:440px;height:65px; float: left;left:20px;}
+#dichdatanascOCC{position:relative;width:200px;height:65px; float: left;left:20px;}
+#dichcomunenascOCC{position:relative;width:330px;height:65px; float: left;left:15px;}
+#dichcfOCC{position:relative; width:300px;height:65px; float:left;left:5px;}
+#dichparentelaOCC{position:relative; width:200px;height:65px; float:left;left:15px;font-size:18px;font-family:"Courier New", Courier, monospace;padding-top:5px;line-height:18px;}
+/**** ****/
+#dich_UI{position:relative; width:1654px; height:2339px; float: left;
+         background-image:url(../Images/DichTARIDetUI.png);
+		 background-repeat:no-repeat;}
+/**** dati dichiarazione ****/
+#dich_TipoDich{position:relative; width:1502px; height:310px; float: left;left:75px;top:65px;padding-top:60px;}
+/*riga 1*/
+#dichtipodic{position:relative;width:885px;height:65px; float: left;left:255px;}
+/*riga 2*/
+#dichdatainizioGG{position:relative; width:60px;height:65px;float:left;left:485px;margin-top:25px}
+#dichdatainizioMM{position:relative; width:60px;height:65px;float:left;left:485px;margin-top:25px}
+#dichdatainizioAA{position:relative; width:60px;height:65px;float:left;left:485px;margin-top:25px}
+#dichdatafineGG{position:relative; width:60px;height:65px;float:left;left:1030px;margin-top:25px}
+#dichdatafineMM{position:relative; width:60px;height:65px;float:left;left:1030px;margin-top:25px}
+#dichdatafineAA{position:relative; width:60px;height:65px;float:left;left:1030px;margin-top:25px}
+/*riga 3*/
+#dichnoccup{position:relative;width:85px;height:65px; float: left;left:750px;margin-top:5px}
+#dichtipooccup{position:relative;width:485px;height:65px; float: left;left:1000px;}
+#dichDcenter{position:relative; width:100%;text-align:center;}
+/**** ****/
+/**** dati immobile ****/
+#dich_DetUI{position:relative;width:1500px;height:580px;float:left;left:75px;top:105px;padding-top:20px;}
+#dichNOrdine{position:relative; width:55px;height:65px;float:left; left:5px}
+#dichDNOrdine{position:relative; width:100%;}
+/*riga 1*/
+#dichindirizzo{position:relative; width:1380px;height:65px;float:left;left:40px;margin-top:10px}
+#dichDindirizzo{position:relative; width:100%;}
+/*riga 2*/
+#dichfoglio{position:relative; width:140px;height:65px;float:left;left: 80px}
+#dichnumero{position:relative; width:140px;height:65px;float:left;left:80px}
+#dichsub{position:relative; width:160px;height:65px;float:left;left:80px}
+#dichcat{position:relative; width:670px;height:65px;float:left;left:80px}
+#dichDcat{position:relative; width:100%;font-size:22px;}
+#dichmq{position:relative; width:140px;height:65px;float:left;left: 80px}
+#dichmqesenti{position:relative; width:140px;height:65px;float:left;left:80px}
+#dichDmq{position:relative; width:100%;text-align:right;padding-right:15px;}
+/*riga 3*/
+#dichrid{position:relative;width:1380px;height:65px; float:left; left:90px;margin-top:-5px}
+/*riga 4*/
+#dichese{position:relative; width:1380px;height:65px;float:left;left:90px;margin-top:10px}
+/**** ****/
+/**** dati annotazioni ****/
+#dichannotazioni{position:relative; width:1500px;height:130px;float:left; left:75px;top:370px;
+    border:none;
+    background:transparent;
+    outline:none;
+    font-family:"Courier New", Courier, monospace;
+	line-height:45px;}
+/**** ****/

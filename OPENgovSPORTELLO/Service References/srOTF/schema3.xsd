@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="IdpHeader" elementFormDefault="qualified" targetNamespace="IdpHeader" id="schema3" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="IdpHeader" type="tns:IdpHeader" />
+  <xs:complexType name="IdpHeader">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="TRT" type="tns:HeaderTRT" />
+      <xs:element minOccurs="0" maxOccurs="1" name="E2E" type="tns:HeaderE2E" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="HeaderTRT">
+    <xs:sequence>
+      <xs:element minOccurs="1" maxOccurs="1" name="ServiceName" type="tns:ServiceName" />
+      <xs:element minOccurs="0" maxOccurs="1" name="MsgId" type="xs:string" />
+      <xs:element minOccurs="1" maxOccurs="1" name="XMLCrtDt" type="xs:dateTime" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Sender" type="tns:TRTSender" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Receiver" type="tns:TRTReceiver" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:simpleType name="ServiceName">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="IdpAllineamentoPendenze" />
+      <xs:enumeration value="IdpInformativaPagamento" />
+      <xs:enumeration value="IdpRendicontazioneEnti" />
+      <xs:enumeration value="IdpConfigurazioneEnte" />
+      <xs:enumeration value="IdpAutorizzazioneDiPagamento" />
+      <xs:enumeration value="IdpEstrattoContoDebitorio" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="TRTSender">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="SenderId" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="SenderSys" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="TRTReceiver">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="ReceiverId" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="ReceiverSys" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="HeaderE2E">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="E2ESrvcNm" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="E2EMsgId" type="xs:string" />
+      <xs:element minOccurs="1" maxOccurs="1" name="XMLCrtDt" type="xs:dateTime" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Sender" type="tns:E2ESender" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Receiver" type="tns:E2EReceiver" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="E2ESender">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="E2ESndrId" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="E2ESndrSys" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="E2EReceiver">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="E2ERcvrId" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="E2ERcvrSys" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="IdpOTF">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="URL_BACK" type="xs:anyURI" />
+        <xs:element minOccurs="0" maxOccurs="1" name="URL_CANCEL" type="xs:anyURI" />
+        <xs:element minOccurs="0" maxOccurs="1" name="OFFLINE_PAYMENT_METHODS" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

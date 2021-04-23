@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="IdpAllineamentoPendenze" elementFormDefault="qualified" targetNamespace="IdpAllineamentoPendenze" id="schema2" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import namespace="IdpHeader" />
+  <xs:import namespace="IdpInclude" />
+  <xs:element name="IdpAllineamentoPendenzeOTF">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q1="IdpHeader" minOccurs="0" maxOccurs="1" ref="q1:IdpHeader" />
+        <xs:element xmlns:q2="IdpHeader" minOccurs="0" maxOccurs="1" ref="q2:IdpOTF" />
+        <xs:element minOccurs="0" maxOccurs="1" name="IdpBody" type="tns:ArrayOfPendenza" />
+      </xs:sequence>
+      <xs:attribute name="Versione" type="tns:Versione" use="required" />
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="ArrayOfPendenza">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Pendenza" type="tns:Pendenza" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="Pendenza">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:HeadPendenza">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="1" name="Insert" type="tns:Pendenza.InsertReplace" />
+          <xs:element minOccurs="0" maxOccurs="1" name="UpdateMassivo" type="tns:Pendenza.UpdateMassivo" />
+          <xs:element minOccurs="0" maxOccurs="1" name="UpdateStatus" type="tns:Pendenza.UpdateStatus" />
+          <xs:element minOccurs="0" maxOccurs="1" name="Replace" type="tns:Pendenza.InsertReplace" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="HeadPendenza">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="IdPendenza" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Mittente" type="tns:Mittente" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Destinatari" type="tns:ArrayOfDestinatario" />
+      <xs:element minOccurs="0" maxOccurs="1" name="CartellaDiPagamento" type="xs:boolean" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Note" type="xs:string" />
+    </xs:sequence>
+    <xs:attribute name="TipoPendenza" type="xs:string" />
+    <xs:attribute xmlns:q3="IdpInclude" name="TipoOperazione" type="q3:TipoOperazione" use="required" />
+  </xs:complexType>
+  <xs:complexType name="Mittente">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="Id" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Descrizione" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ArrayOfDestinatario">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Destinatario" type="tns:Destinatario" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="Destinatario">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="Id" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Descrizione" type="xs:string" />
+    </xs:sequence>
+    <xs:attribute xmlns:q4="IdpInclude" name="Tipo" type="q4:TipoDestinatario" use="required" />
+  </xs:complexType>
+  <xs:complexType name="Pendenza.InsertReplace">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="DescrizioneCausale" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Riscossore" type="tns:Riscossore" />
+      <xs:element minOccurs="1" maxOccurs="1" name="DataCreazione" type="xs:dateTime" />
+      <xs:element minOccurs="1" maxOccurs="1" name="DataEmissione" type="xs:dateTime" />
+      <xs:element minOccurs="1" maxOccurs="1" name="DataPrescrizione" type="xs:dateTime" />
+      <xs:element minOccurs="0" maxOccurs="1" name="AnnoRiferimento" type="xs:gYear" />
+      <xs:element minOccurs="0" maxOccurs="1" name="DataModificaEnte" type="xs:dateTime" />
+      <xs:element xmlns:q5="IdpInclude" minOccurs="1" maxOccurs="1" name="Stato" type="q5:StatoPendenza" />
+      <xs:element minOccurs="1" maxOccurs="1" name="ImportoTotale" type="xs:decimal" />
+      <xs:element xmlns:q6="IdpInclude" minOccurs="1" maxOccurs="1" name="Divisa" type="q6:Divisa" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="InfoPagamento">
+        <xs:complexType>
+          <xs:complexContent mixed="false">
+            <xs:extension base="tns:InfoPagamento.InsertReplace">
+              <xs:sequence>
+                <xs:element minOccurs="0" maxOccurs="unbounded" name="DettaglioPagamento" type="tns:DettaglioPagamento.InsertReplace" />
+              </xs:sequence>
+            </xs:extension>
+          </xs:complexContent>
+        </xs:complexType>
+      </xs:element>
+      <xs:element xmlns:q7="IdpInclude" minOccurs="0" maxOccurs="1" name="Allegato" type="q7:Allegato" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="Riscossore">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="Id" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Riferimento" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="InfoPagamento.InsertReplace">
+    <xs:attribute xmlns:q8="IdpInclude" name="TipoPagamento" type="q8:TipoPagamento" use="required" />
+  </xs:complexType>
+  <xs:complexType name="DettaglioPagamento.InsertReplace">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="IdPagamento" type="xs:string" />
+      <xs:element xmlns:q9="IdpInclude" minOccurs="0" maxOccurs="1" name="CIP" type="q9:CIP" />
+      <xs:element minOccurs="1" maxOccurs="1" name="DataScadenza" type="xs:date" />
+      <xs:element minOccurs="0" maxOccurs="1" name="DataInizioValidita" type="xs:date" />
+      <xs:element minOccurs="1" maxOccurs="1" name="DataFineValidita" type="xs:date" />
+      <xs:element xmlns:q10="IdpInclude" minOccurs="1" maxOccurs="1" name="Stato" type="q10:StatoPagamento" />
+      <xs:element minOccurs="1" maxOccurs="1" name="Importo" type="xs:decimal" />
+      <xs:element minOccurs="0" maxOccurs="1" name="DettaglioImporto" type="tns:ArrayOfVoceImporto" />
+      <xs:element minOccurs="0" maxOccurs="1" name="DettaglioTransazione" type="tns:DettaglioTransazione" />
+      <xs:element xmlns:q11="IdpInclude" minOccurs="0" maxOccurs="unbounded" name="Allegato" type="q11:Allegato" />
+      <xs:element minOccurs="0" maxOccurs="1" name="CausalePagamento" type="xs:string" />
+      <xs:element xmlns:q12="IdpInclude" minOccurs="0" maxOccurs="1" name="AccreditoPagamento" type="q12:CoordinateBancarie" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ArrayOfVoceImporto">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Voce" type="tns:VoceImporto" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="VoceImporto">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="Codice" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Descrizione" type="xs:string" />
+      <xs:element minOccurs="1" maxOccurs="1" name="Importo" type="xs:decimal" />
+      <xs:element minOccurs="0" maxOccurs="1" name="CapitoloBilancio" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Accertamento" type="xs:string" />
+    </xs:sequence>
+    <xs:attribute name="Tipo" type="xs:string" />
+  </xs:complexType>
+  <xs:complexType name="DettaglioTransazione">
+    <xs:sequence>
+      <xs:element minOccurs="1" maxOccurs="1" name="DataPagamento" type="xs:dateTime" />
+      <xs:element minOccurs="0" maxOccurs="1" name="CanalePagamento" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="MezzoPagamento" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="ImportoPagamento" type="xs:decimal" />
+      <xs:element minOccurs="0" maxOccurs="1" name="NotePagamento" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="Pendenza.UpdateMassivo">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="DescrizioneCausale" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Riscossore" type="tns:Riscossore" />
+      <xs:element minOccurs="1" maxOccurs="1" name="DataCreazione" type="xs:dateTime" />
+      <xs:element minOccurs="1" maxOccurs="1" name="DataEmissione" type="xs:dateTime" />
+      <xs:element minOccurs="1" maxOccurs="1" name="DataPrescrizione" type="xs:dateTime" />
+      <xs:element minOccurs="0" maxOccurs="1" name="AnnoRiferimento" type="xs:gYear" />
+      <xs:element minOccurs="0" maxOccurs="1" name="DataModificaEnte" type="xs:dateTime" />
+      <xs:element xmlns:q13="IdpInclude" minOccurs="1" maxOccurs="1" name="Stato" type="q13:StatoPendenza" />
+      <xs:element minOccurs="1" maxOccurs="1" name="ImportoTotale" type="xs:decimal" />
+      <xs:element xmlns:q14="IdpInclude" minOccurs="1" maxOccurs="1" name="Divisa" type="q14:Divisa" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="InfoPagamento">
+        <xs:complexType>
+          <xs:complexContent mixed="false">
+            <xs:extension base="tns:InfoPagamento.InsertReplace">
+              <xs:sequence>
+                <xs:element minOccurs="0" maxOccurs="unbounded" name="DettaglioPagamento" type="tns:DettaglioPagamento.InsertReplace" />
+              </xs:sequence>
+            </xs:extension>
+          </xs:complexContent>
+        </xs:complexType>
+      </xs:element>
+      <xs:element xmlns:q15="IdpInclude" minOccurs="0" maxOccurs="1" name="Allegato" type="q15:Allegato" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="Pendenza.UpdateStatus">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="Riscossore" type="tns:Riscossore" />
+      <xs:element minOccurs="0" maxOccurs="1" name="DataModificaEnte" type="xs:dateTime" />
+      <xs:element xmlns:q16="IdpInclude" minOccurs="0" maxOccurs="1" name="Stato" type="q16:StatoPendenza" />
+      <xs:element minOccurs="0" maxOccurs="1" name="ImportoTotale" type="xs:decimal" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="InfoPagamento">
+        <xs:complexType>
+          <xs:complexContent mixed="false">
+            <xs:extension base="tns:InfoPagamento.UpdateStatus">
+              <xs:sequence>
+                <xs:element minOccurs="0" maxOccurs="unbounded" name="DettaglioPagamento" type="tns:DettaglioPagamento.UpdateStatus" />
+              </xs:sequence>
+            </xs:extension>
+          </xs:complexContent>
+        </xs:complexType>
+      </xs:element>
+      <xs:element xmlns:q17="IdpInclude" minOccurs="0" maxOccurs="1" name="Allegato" type="q17:Allegato" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="InfoPagamento.UpdateStatus">
+    <xs:attribute xmlns:q18="IdpInclude" name="TipoPagamento" type="q18:TipoPagamento" use="required" />
+  </xs:complexType>
+  <xs:complexType name="DettaglioPagamento.UpdateStatus">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="IdPagamento" type="xs:string" />
+      <xs:element xmlns:q19="IdpInclude" minOccurs="0" maxOccurs="1" name="CIP" type="q19:CIP" />
+      <xs:element minOccurs="0" maxOccurs="1" name="DataScadenza" type="xs:date" />
+      <xs:element minOccurs="0" maxOccurs="1" name="DataInizioValidita" type="xs:date" />
+      <xs:element minOccurs="0" maxOccurs="1" name="DataFineValidita" type="xs:date" />
+      <xs:element xmlns:q20="IdpInclude" minOccurs="1" maxOccurs="1" name="Stato" type="q20:StatoPagamento" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Importo" type="xs:decimal" />
+      <xs:element minOccurs="0" maxOccurs="1" name="DettaglioImporto" type="tns:ArrayOfVoceImporto" />
+      <xs:element minOccurs="0" maxOccurs="1" name="DettaglioTransazione" type="tns:DettaglioTransazione" />
+      <xs:element xmlns:q21="IdpInclude" minOccurs="0" maxOccurs="unbounded" name="Allegato" type="q21:Allegato" />
+      <xs:element minOccurs="0" maxOccurs="1" name="CausalePagamento" type="xs:string" />
+      <xs:element xmlns:q22="IdpInclude" minOccurs="0" maxOccurs="1" name="AccreditoPagamento" type="q22:CoordinateBancarie" />
+      <xs:element xmlns:q23="IdpInclude" minOccurs="0" maxOccurs="1" default="Update" name="TipoOperazione" type="q23:TipoOperazioneUpdateStatus" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:simpleType name="Versione">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="01.03-00" />
+      <xs:enumeration value="01.03-01" />
+      <xs:enumeration value="01.03-02" />
+      <xs:enumeration value="01.03-03" />
+    </xs:restriction>
+  </xs:simpleType>
+</xs:schema>

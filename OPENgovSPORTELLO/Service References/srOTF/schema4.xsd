@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="IdpInclude" elementFormDefault="qualified" targetNamespace="IdpInclude" id="schema4" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:simpleType name="TipoDestinatario">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Cittadino" />
+      <xs:enumeration value="Delegato" />
+      <xs:enumeration value="Altro" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="TipoOperazione">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Insert" />
+      <xs:enumeration value="UpdateStatus" />
+      <xs:enumeration value="UpdateMassivo" />
+      <xs:enumeration value="Replace" />
+      <xs:enumeration value="Delete" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="StatoPendenza">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Aperta" />
+      <xs:enumeration value="Chiusa" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="Divisa">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="EUR" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="TipoPagamento">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Pagamento a Rate" />
+      <xs:enumeration value="Pagamento Unico" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="CIP">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="Codice" type="xs:string" />
+    </xs:sequence>
+    <xs:attribute name="Tipo" type="xs:string" />
+  </xs:complexType>
+  <xs:simpleType name="StatoPagamento">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Non Pagato" />
+      <xs:enumeration value="Pagato" />
+      <xs:enumeration value="Non Pagabile" />
+      <xs:enumeration value="Pagamento Irregolare" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="Allegato">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="Titolo" type="xs:string" />
+      <xs:element minOccurs="1" maxOccurs="1" name="Codifica" type="tns:MIMETypeCode" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Contenuto" type="xs:base64Binary" />
+      <xs:element minOccurs="0" maxOccurs="1" name="IdAntifalsificazione" type="xs:string" />
+    </xs:sequence>
+    <xs:attribute name="Tipo" type="tns:ContentType" use="required" />
+  </xs:complexType>
+  <xs:simpleType name="MIMETypeCode">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="GIF_" />
+      <xs:enumeration value="HTML" />
+      <xs:enumeration value="JPEG" />
+      <xs:enumeration value="LNK_" />
+      <xs:enumeration value="MSWD" />
+      <xs:enumeration value="MSEX" />
+      <xs:enumeration value="MSPP" />
+      <xs:enumeration value="PDF_" />
+      <xs:enumeration value="PNG_" />
+      <xs:enumeration value="TEXT" />
+      <xs:enumeration value="XML_" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="ContentType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Documento" />
+      <xs:enumeration value="Ricevuta" />
+      <xs:enumeration value="Quietanza" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="CoordinateBancarie">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="CodiceIBAN" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Beneficiario" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:simpleType name="TipoOperazioneUpdateStatus">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Insert" />
+      <xs:enumeration value="Update" />
+    </xs:restriction>
+  </xs:simpleType>
+</xs:schema>
