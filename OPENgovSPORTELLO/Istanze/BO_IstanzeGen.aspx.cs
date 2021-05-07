@@ -109,6 +109,9 @@ namespace OPENgovSPORTELLO.Istanze
                 {
                     MySession.Current.Ente = new BLL.EntiSistema(new EntiInLavorazione()).LoadEnte(ddlEnte.SelectedValue, MySession.Current.UserLogged.NameUser);
                 }
+
+                RegisterScript("$('#hdDescrEnte').val('" + MySession.Current.Ente.Ambiente + "');", typeof(Page));
+
                 RegisterScript("$('.divGrdBtn').hide();", typeof(Page));
                 new General().LogActionEvent(DateTime.Now, MySession.Current.UserLogged.NameUser, MySession.Current.Scope, "Istanze", "", "Page_Load", "ingresso pagina", "", "", "");
             }

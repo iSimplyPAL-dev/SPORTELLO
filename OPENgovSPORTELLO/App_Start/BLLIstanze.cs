@@ -807,7 +807,12 @@ namespace OPENgovSPORTELLO.BLL
             {
                 sScript = string.Empty;
 
-                GrdStatiComunicazioni.DataSource = InnerObj.ListComunicazioni;
+                
+
+                // BD 07/05/2021 Ordinato per data dal piu' recente
+                GrdStatiComunicazioni.DataSource = InnerObj.ListComunicazioni.OrderByDescending(o => o.Data).ToList();
+                // BD 07/05/2021 Ordinato per data dal piu' recente
+
                 GrdStatiComunicazioni.DataBind();
 
                 GrdAttachments.DataSource = InnerObj.ListAllegati;

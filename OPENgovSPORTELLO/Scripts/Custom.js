@@ -5,7 +5,14 @@
         $('#lblDescrEnte').text('Comune di ' + $('#hdDescrEnte').val().replace('&rsquo;', '&rsquo;'));
     }
     else {
-        $('#lblDescrEnte').text('Sportello on-line');
+        if ($('#hdDescrEnte').val() != '')
+        {
+            $('#lblDescrEnte').text('Sportello on-line ' + $('#hdDescrEnte').val().replace('&rsquo;', '&rsquo;') );
+        }
+        else
+        { 
+            $('#lblDescrEnte').text('Sportello on-line ');
+        }
     }
     var sErrore = $('#OnlyNumber_error').text();
     if (sErrore == undefined)

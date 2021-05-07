@@ -6,6 +6,10 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using log4net;
 
+using OPENgovSPORTELLO.Models;
+
+
+
 namespace OPENgovSPORTELLO
 {
     /// <summary>
@@ -41,15 +45,29 @@ namespace OPENgovSPORTELLO
                 sScript = "<script language='javascript'>";
                 sScript += new BLL.GestForm().GetLabel("DefaultBO", "");
                 sScript += "</script>";
+                               
+
+                
                 ClientScript.RegisterStartupScript(this.GetType(), uniqueId, sScript);
 
                 new BLL.Messages(new Models.Message()).SendMail();
                 new BLL.GestForm().KillSleepProcess();
+
+                List<GenericCategory> ListGenEnti = new BLL.User(new UserRole() { NameUser = MySession.Current.UserLogged.NameUser }).LoadUserEnti("", MySession.Current.UserLogged.NameUser);
+                if (ListGenEnti.Count >= 1)
+                {
+                    MySession.Current.Ente = new BLL.EntiSistema(new EntiInLavorazione()).LoadEnte(ListGenEnti[0].Codice, MySession.Current.UserLogged.NameUser);
+                }
+
+                ClientScript.RegisterStartupScript(this.GetType(), uniqueId, "$('#hdDescrEnte').val('" + MySession.Current.Ente.Ambiente + "');");
+                
             }
             catch (Exception ex)
             {
                 Log.Debug("OPENgovSPORTELLO.BasePage.GetLabelForm::errore::", ex);
             }
+
+
         }
     }
 }
