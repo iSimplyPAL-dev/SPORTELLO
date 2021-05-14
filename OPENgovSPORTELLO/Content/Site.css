@@ -526,6 +526,14 @@ div>ul>li{
     height:40px;width:40px;	
     pointer-events:none;	
 }
+.div_StatoPC {
+    background-image: url(../Images/Flag-Orange-icon.png);
+    background-repeat: no-repeat;
+    border: none;
+    height: 40px;width: 40px;
+    pointer-events: none;
+}
+
 .div_StatoOKGrd
 {
     background-image:url(../Images/Flag-green-icon_grd.png);

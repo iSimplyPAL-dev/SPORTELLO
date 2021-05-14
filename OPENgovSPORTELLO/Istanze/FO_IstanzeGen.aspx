@@ -145,10 +145,13 @@
                     <div class="col-md-3">
                         <p><input class="div_StatoWA" />Istanza presentata/accettata</p>
                     </div>
-                    <div class="col-md-3">
+                    <div class="col-md-2">
+                        <p><input class="div_StatoPC" />Istanza presa in carico</p>
+                    </div>
+                    <div class="col-md-2">
                         <p><input class="div_StatoOK" />Istanza validata</p>
                     </div>
-                    <div class="col-md-3">
+                    <div class="col-md-2">
                         <p><input class="div_StatoKO" />Istanza respinta</p>
                     </div>
                 </div>
