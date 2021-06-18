@@ -125,7 +125,7 @@ namespace OPENgovSPORTELLO.Cruscotto
         /// <revision date="05/04/2019">
         /// <strong>Sportello_GestioneRegistrazioni.docx</strong>
         /// </revision>
-        /// </revisionHistory>
+        /// </revisionHistory>Correzzioni
         protected void Print(object sender, EventArgs e)
         {
             string sScript = "";
