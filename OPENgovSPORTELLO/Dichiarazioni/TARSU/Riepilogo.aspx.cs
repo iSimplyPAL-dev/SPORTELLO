@@ -90,8 +90,17 @@ namespace OPENgovSPORTELLO.Dichiarazioni.TARSU
                         GrdUI.DataSource = ListUI;
                         GrdUI.DataBind();
 
-                        GrdDich.DataSource = ListDich;
-                        GrdDich.DataBind();
+                        if (ListDich.Count > 0)
+                        {
+                            GrdDich.DataSource = ListDich;
+                            GrdDich.DataBind();
+
+                            ShowHide(BLL.GestForm.PlaceHolderName.Body + "_GrdDich", true);
+                        }
+                        else
+                        {
+                            ShowHide(BLL.GestForm.PlaceHolderName.Body + "_GrdDich", false);
+                        }
 
                         if (ListDovuto.Count > 0)
                         {
@@ -115,7 +124,7 @@ namespace OPENgovSPORTELLO.Dichiarazioni.TARSU
                             }
                             divListUIRidEse.InnerHtml += "</p>";
                         }
-                        if (ListDichRidEse.Count > 0)
+                        if  ( (ListDichRidEse.Count > 0) && ( ListDich.Count > 0 ) )
                         {
                             divListDichRidEse.InnerHtml = "<p class='lead_normal'>** Riduzione/Esenzione</p><p>";
                             foreach (RidEseTARSU myItem in ListDichRidEse)
@@ -218,8 +227,10 @@ namespace OPENgovSPORTELLO.Dichiarazioni.TARSU
                     doc.Close();
                     File.Copy(UrlHelper.GetPathDichiarazioni + sNamePDF
                             , UrlHelper.GetRepositoryPDF + sNamePDF);
-                    File.Delete(UrlHelper.GetRepositoryPDF + sNamePDF);
-                    RegisterScript("$('#myEmbedPDF').attr('src','" + UrlHelper.GetPathWebDichiarazioni + "DICH_TARI_" + MySession.Current.myAnag.Cognome + "_" + MySession.Current.myAnag.Nome + "_" + ((MySession.Current.myAnag.PartitaIva != string.Empty) ? MySession.Current.myAnag.PartitaIva : MySession.Current.myAnag.CodiceFiscale) + ".pdf');", this.GetType());
+
+                    File.Delete(UrlHelper.GetPathDichiarazioni + sNamePDF);
+
+                    RegisterScript("$('#myEmbedPDF').attr('src','" + UrlHelper.GetPathWebDichiarazioni + sNamePDF, this.GetType());
 
                     MySession.Current.IsInitDich=false;
                 MySession.Current.IDDichiarazioneIstanze=-1;

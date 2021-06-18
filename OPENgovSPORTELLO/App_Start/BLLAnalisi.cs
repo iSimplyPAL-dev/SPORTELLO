@@ -505,21 +505,26 @@ namespace OPENgovSPORTELLO.BLL
         /// <strong>Sportello_GestioneRegistrazioni.docx</strong>
         /// </revision>
         /// </revisionHistory>
-        public bool LoadUserNoConfirmed(object myTypeObj, out List<object> ListMyData)
+        public bool LoadUserNoConfirmed(string IdEnte, object myTypeObj, out List<object> ListMyData)
         {
             ListMyData = new List<object>();
             try
             {
                 using (DBModel ctx = new DBModel())
                 {
-                     string sSQL = ctx.GetSQL("prc_GetUserNoConfirmed");
-                   if (myTypeObj.GetType() == typeof(UserRole))
+                     //string sSQL = ctx.GetSQL("prc_GetUserNoConfirmed");
+
+                    string sSQL = ctx.GetSQL("prc_GetUserNoConfirmed_bis", "IDENTE");
+
+                    if (myTypeObj.GetType() == typeof(UserRole))
                     {
-                        ListMyData = ((ctx.ContextDB.Database.SqlQuery<UserRole>(sSQL).ToList<UserRole>()) as IEnumerable<object>).Cast<object>().ToList();
+                        ListMyData = ((ctx.ContextDB.Database.SqlQuery<UserRole>(sSQL, ctx.GetParam("IDENTE", Convert.ToInt32(IdEnte))).ToList<UserRole>()) as IEnumerable<object>).Cast<object>().ToList();
                     }
                     else
                     {
-                        ListMyData = ((ctx.ContextDB.Database.SqlQuery<UserRoleStampa>(sSQL).ToList<UserRoleStampa>()) as IEnumerable<object>).Cast<object>().ToList();
+                        //ListMyData = ((ctx.ContextDB.Database.SqlQuery<UserRoleStampa>(sSQL).ToList<UserRoleStampa>()) as IEnumerable<object>).Cast<object>().ToList();
+                        ListMyData = ((ctx.ContextDB.Database.SqlQuery<UserRoleStampa>(sSQL, ctx.GetParam("IDENTE", Convert.ToInt32(IdEnte))).ToList<UserRoleStampa>()) as IEnumerable<object>).Cast<object>().ToList();
+
                     }
                     ctx.Dispose();
                 }

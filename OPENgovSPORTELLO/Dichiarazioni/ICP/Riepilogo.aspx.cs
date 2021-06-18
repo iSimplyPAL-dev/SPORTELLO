@@ -168,8 +168,10 @@ namespace OPENgovSPORTELLO.Dichiarazioni.ICP
                     doc.Close();
                     File.Copy(UrlHelper.GetPathDichiarazioni + sNamePDF
                             , UrlHelper.GetRepositoryPDF + sNamePDF);
-                    File.Delete(UrlHelper.GetRepositoryPDF + sNamePDF);
-                    RegisterScript("$('#myEmbedPDF').attr('src','" + UrlHelper.GetPathWebDichiarazioni + "DICH_ICP_" + MySession.Current.myAnag.Cognome + "_" + MySession.Current.myAnag.Nome + "_" + ((MySession.Current.myAnag.PartitaIva != string.Empty) ? MySession.Current.myAnag.PartitaIva : MySession.Current.myAnag.CodiceFiscale) + ".pdf');", this.GetType());
+
+                    File.Delete(UrlHelper.GetPathDichiarazioni + sNamePDF);
+
+                    RegisterScript("$('#myEmbedPDF').attr('src','" + UrlHelper.GetPathWebDichiarazioni + sNamePDF, this.GetType());
 
                     MySession.Current.IsInitDich = false;
                     MySession.Current.IDDichiarazioneIstanze = -1;

@@ -361,3 +361,6 @@ MigrationBackup/
 
 # Fody - auto-generated XML schema
 FodyWeavers.xsd
+/OPENgovSPORTELLO/Attachments
+/OPENgovSPORTELLO/HTMLtoPDF
+/OPENgovSPORTELLO/Dichiarazioni/DICH_IMU_Baravalle_Diego_BRVDGI73M15E379O.pdf

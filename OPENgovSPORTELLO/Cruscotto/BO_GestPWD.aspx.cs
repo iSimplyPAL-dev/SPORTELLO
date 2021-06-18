@@ -140,7 +140,7 @@ namespace OPENgovSPORTELLO.Cruscotto
                     var ws = wb.Worksheets.Add("Foglio1");
                     if (((RouteData.Values["TOGEST"] != null) ? int.Parse(RouteData.Values["TOGEST"].ToString()) : (int)BLL.Analisi.TypeGestUser.GestPWD) == (int)BLL.Analisi.TypeGestUser.UtentiNonConfermati)
                     {
-                        if (new BLL.Analisi().LoadUserNoConfirmed(new UserRoleStampa(), out ListToPrint))
+                        if (new BLL.Analisi().LoadUserNoConfirmed(MySession.Current.Ente.IDEnte, new UserRoleStampa(), out ListToPrint))
                         {
                             System.Reflection.PropertyInfo[] properties = ListToPrint.First().GetType().GetProperties();
                             List<string> headerNames = properties.Select(prop => prop.Name).ToList();
@@ -346,8 +346,8 @@ namespace OPENgovSPORTELLO.Cruscotto
 
                 if (MySession.Current.SortDirection == SortDirection.Descending)
                     ListSorted.Reverse();
-                GrdGestionePWD.DataSource = ListSorted;
-                GrdGestionePWD.DataBind();
+                GrdUserNoConfirmed.DataSource = ListSorted;
+                GrdUserNoConfirmed.DataBind();
             }
             catch (Exception ex)
             {
@@ -415,7 +415,7 @@ namespace OPENgovSPORTELLO.Cruscotto
             {
                 MySession.Current.SortDirection = SortDirection.Descending;
                 List<object> ListMyData = new List<object>();
-                if (new BLL.Analisi().LoadUserNoConfirmed(new UserRole(), out ListMyData))
+                if (new BLL.Analisi().LoadUserNoConfirmed( MySession.Current.Ente.IDEnte, new UserRole(), out ListMyData))
                 {
                     MySession.Current.UserNoConfirmed = (ListMyData as IEnumerable<object>).Cast<UserRole>().ToList();
                     GrdUserNoConfirmed.DataSource = MySession.Current.UserNoConfirmed;

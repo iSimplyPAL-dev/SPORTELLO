@@ -265,28 +265,37 @@ namespace OPENgovSPORTELLO.BLL
         /// <returns></returns>
         public bool LoadTARSURiepilogo(string IDEnte, int IDContribuente, out List<RiepilogoUI> ListUI, out List<RiepilogoUI> ListDich, out List<CategorieTARSU> ListCat, out List<RidEseTARSU> ListUIRidEse, out List<RidEseTARSU> ListDichRidEse, out List<RiepilogoDovuto> ListDovuto)
         {
-            ListUI = new List<RiepilogoUI>(); ListDich = new List<RiepilogoUI>();
+            ListUI = new List<RiepilogoUI>(); 
+            ListDich = new List<RiepilogoUI>();
+
             ListCat = new List<CategorieTARSU>();
-            ListUIRidEse = new List<RidEseTARSU>(); ListDichRidEse = new List<RidEseTARSU>();
+            ListUIRidEse = new List<RidEseTARSU>();
+
+            ListDichRidEse = new List<RidEseTARSU>();
             ListDovuto = new List<RiepilogoDovuto>();
+
             List<object> ListObj = new List<object>();
+
             try
             {
                 if (!new TARSU().LoadTARSUUIDich(IDEnte, IDContribuente, -1, -1, "I", new RiepilogoUI(), out ListObj))
                 {
                     return false;
                 }
-                else {
+                else 
+                {
                     foreach (object myObj in ListObj)
                     {
                         ListUI.Add((RiepilogoUI)myObj);
                     }
                 }
+
                 if (!new TARSU().LoadTARSUUIDich(IDEnte, IDContribuente, -1, -1, "D", new RiepilogoUI(), out ListObj))
                 {
                     return false;
                 }
-                else {
+                else
+                {
                     foreach (object myObj in ListObj)
                     {
                         ListDich.Add((RiepilogoUI)myObj);
@@ -294,7 +303,9 @@ namespace OPENgovSPORTELLO.BLL
                 }
 
                 if (!new TARSU().LoadTARSURidEse(IDEnte, IDContribuente, -1, -1, "I", string.Empty, new RidEseTARSU(), out ListObj))
+                {
                     return false;
+                }
                 else
                 {
                     foreach (object myObj in ListObj)
@@ -302,8 +313,11 @@ namespace OPENgovSPORTELLO.BLL
                         ListUIRidEse.Add((RidEseTARSU)myObj);
                     }
                 }
+
                 if (!new TARSU().LoadTARSURidEse(IDEnte, IDContribuente, -1, -1, "D", string.Empty, new RidEseTARSU(), out ListObj))
+                {
                     return false;
+                }
                 else
                 {
                     foreach (object myObj in ListObj)
@@ -311,8 +325,12 @@ namespace OPENgovSPORTELLO.BLL
                         ListDichRidEse.Add((RidEseTARSU)myObj);
                     }
                 }
+
                 if (!new TARSU().LoadDovutoVersato(IDEnte, IDContribuente, out ListDovuto))
+                {
                     return false;
+                }
+                    
                 return true;
             }
             catch (Exception ex)
