@@ -155,7 +155,13 @@ namespace OPENgovSPORTELLO
                         ClientScript.RegisterStartupScript(this.GetType(), uniqueId, sScript);
                         ddlEnte.Attributes.Add("disabled", "disabled");
                         string myFailureText = string.Empty;
-                        string mySignIn = new LoginManager().ManageLogin(MySession.Current.UserLogged.NameUser, "", out myFailureText);
+                        //BD 24/09/2021 Problema con le deleghe
+                        //string mySignIn = new LoginManager().ManageLogin(MySession.Current.UserLogged.NameUser, "", out myFailureText);
+                        string mySignIn = new LoginManager().ManageLogin(MySession.Current.UserLogged.NameUser,
+                                                                            MySession.Current.UserLogged.CFPIVA,
+                                                                            "", out myFailureText);
+                        //BD 24/09/2021 Problema con le deleghe
+
                         switch (mySignIn)
                         {
                             case "GetProfiloFO":

@@ -383,7 +383,7 @@ namespace OPENgovSPORTELLO.BLL
             List<UserRole> ListMyData = new List<UserRole>();
             try
             {
-                Log.Debug("OPENgovSPORTELLO.BLL.Settings.LoadUserRole::entro per operatore->" + ParamSearch + ", cfpiva->" + CFPIVA + ", filtro->" + ((filtro) ? "1" : "0"));
+                Log.Debug("OPENgovSPORTELLO.BLL.Settings.LoadUserRole::entro per operatore->" + ParamSearch + ", cfpiva->" + CFPIVA + ", filtro->" + ((filtro) ? "1" : "0") + ", idEnte->" + IdEnte);
                 using (DBModel ctx = new DBModel())
                 {
                     Log.Debug("prc_GetAutorizzazioni " + ParamSearch + "," + ((filtro) ? 1 : 0).ToString() + "," + CFPIVA + "," + IdEnte);
@@ -396,7 +396,8 @@ namespace OPENgovSPORTELLO.BLL
                             ).ToList<UserRole>();
                     foreach (UserRole myItem in ListMyData)
                     {
-                        Log.Debug("prc_GetUserEnti " + myItem.ID + ", '', 1");
+                        Log.Debug("LoadUserRole myItem.ListDeleganti " + myItem.ListDeleganti + ", '', 1");
+                        Log.Debug("LoadUserRoleprc_GetUserEnti " + myItem.ID + ", '', 1");
                         sSQL = ctx.GetSQL("prc_GetUserEnti", "IDUSER", "USERNAME", "ONLYCOD");
                         myItem.Enti = ctx.ContextDB.Database.SqlQuery<string>(sSQL, ctx.GetParam("IDUSER", myItem.ID)
                                 , ctx.GetParam("USERNAME", string.Empty)

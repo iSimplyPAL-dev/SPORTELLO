@@ -104,8 +104,13 @@ namespace OPENgovSPORTELLO.SPID
                         var user = manager.FindByEmail(MySession.Current.SPIDAuthn.email);
                         if (user!=null)
                         signinManager.SignIn(user, true, false);
+                        // BD 24/09/2021 Problema con le deleghe
+                        //string mySignIn = new LoginManager().ManageLogin(MySession.Current.SPIDAuthn.email, "", out myFailureText);
+                        string mySignIn = new LoginManager().ManageLogin(MySession.Current.SPIDAuthn.email,
+                                                                         user.CodiceFiscale,
+                                                                         "", out myFailureText);
+                        // BD 24/09/2021
 
-                        string mySignIn = new LoginManager().ManageLogin(MySession.Current.SPIDAuthn.email, "", out myFailureText);
                         switch (mySignIn)
                         {
                             case "GetProfiloFO":

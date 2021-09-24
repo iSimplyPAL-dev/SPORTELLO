@@ -388,7 +388,7 @@ namespace OPENgovSPORTELLO
         /// <param name="FailureText"></param>
         /// <returns></returns>
         /// <revisionHistory><revision date="11/03/2020"><strong>SPID</strong>Le regole SPID vogliono che il pulsante di accesso sia subito visibile; bisogna quindi spostare la selezione dell'ente dopo l'autenticazione</revision></revisionHistory>
-        public string ManageLogin(string myEmail, string mySpIDCode, out string FailureText)
+        public string ManageLogin(string myEmail, string myCodFiscale, string mySpIDCode, out string FailureText)
         {
             UserRole myUser = new UserRole();
             FailureText = string.Empty;
@@ -400,7 +400,10 @@ namespace OPENgovSPORTELLO
                     myEnte = MySession.Current.Ente.IDEnte;
                 }
                 new General().LogActionEvent(DateTime.Now, myEmail, "", "Login", "Login", "LogIn", "login a sistema", mySpIDCode, "Accesso", myEnte);
-                List<UserRole> ListGen = new BLL.Settings().LoadUserRole(myEmail, string.Empty, true, myEnte, myEmail);
+                // BD 24/09/2021 problema con le deleghe
+                //List<UserRole> ListGen = new BLL.Settings().LoadUserRole(myEmail, string.Empty, true, myEnte, myEmail);
+                List<UserRole> ListGen = new BLL.Settings().LoadUserRole(myEmail, myCodFiscale, true, myEnte, myEmail);
+                // BD 24/09/2021 problema con le deleghe
                 if (ListGen.Count > 0)
                 {
                     myUser = ListGen[0];

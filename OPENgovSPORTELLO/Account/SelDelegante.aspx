@@ -39,7 +39,7 @@
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
     <div class="col-md-12 form-group lead" style="padding-bottom: 30px;">
         <label class="col-md-4" style="margin-top:10px;">Sportello Contribuente per il comune di </label>
-        <asp:DropDownList runat="server" ID="ddlEnte" CssClass="subtitle col-md-4" AppendDataBoundItems="true" AutoPostBack="true" OnSelectedIndexChanged="ControlSelectedChanged"></asp:DropDownList>
+        <%--<asp:DropDownList runat="server" ID="ddlEnte" CssClass="subtitle col-md-4" AppendDataBoundItems="true" AutoPostBack="true" OnSelectedIndexChanged="ControlSelectedChanged"></asp:DropDownList>--%>
     </div>
     <div class="body_page">
        <div class="col-md-12 pageFO">

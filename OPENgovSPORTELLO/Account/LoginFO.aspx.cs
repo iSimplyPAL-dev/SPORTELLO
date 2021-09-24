@@ -180,7 +180,7 @@ namespace OPENgovSPORTELLO.Account
                             else
                             {
                                 string myFailureText = string.Empty;
-                                string mySignIn = new LoginManager().ManageLogin(user.Email, "", out myFailureText);
+                                string mySignIn = new LoginManager().ManageLogin(user.Email, user.CodiceFiscale, "", out myFailureText);
                                 switch (mySignIn)
                                 {
                                     case "GetProfiloFO":
